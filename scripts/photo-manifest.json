@@ -1,0 +1,426 @@
+﻿{
+    "_notes":  "One entry per original file in \u0027Photos of work\u0027. rect values are fractions [x, y, w, h] of the EXIF-normalised image. Crops exist to remove number plates, people-adjacent clutter, third-party signage or compositional defects; each states its reason. Excluded files state why. Verified visually after each pipeline run.",
+    "500425617_2708167992715396_861416836390490065_n.jpg":  {
+                                                                "action":  "include",
+                                                                "slug":  "extension-tiled-roof-lead-apron",
+                                                                "crops":  [
+                                                                              {
+                                                                                  "suffix":  "detail",
+                                                                                  "rect":  [
+                                                                                               0,
+                                                                                               0.05,
+                                                                                               1,
+                                                                                               0.42
+                                                                                           ],
+                                                                                  "reason":  "isolates the finished tile course and lead apron; removes unfinished interior below"
+                                                                              }
+                                                                          ]
+                                                            },
+    "500456874_2708167989382063_3561413592994668994_n.jpg":  {
+                                                                 "action":  "include",
+                                                                 "slug":  "tiling-in-progress-battens-lead-abutment",
+                                                                 "crops":  [
+                                                                               {
+                                                                                   "suffix":  "detail",
+                                                                                   "rect":  [
+                                                                                                0,
+                                                                                                0,
+                                                                                                0.82,
+                                                                                                1
+                                                                                            ],
+                                                                                   "reason":  "removes scaffold boards right of frame"
+                                                                               }
+                                                                           ]
+                                                             },
+    "500670490_2708168349382027_3832310307631360393_n.jpg":  {
+                                                                 "action":  "include",
+                                                                 "slug":  "grey-tile-roof-velux-lead-flashing",
+                                                                 "crops":  [
+                                                                               {
+                                                                                   "suffix":  "detail",
+                                                                                   "rect":  [
+                                                                                                0,
+                                                                                                0.2,
+                                                                                                1,
+                                                                                                0.66
+                                                                                            ],
+                                                                                   "reason":  "crops to the roof plane; removes satellite dish and window clutter above"
+                                                                               }
+                                                                           ]
+                                                             },
+    "500825077_2708168229382039_1012852856508715833_n.jpg":  {
+                                                                 "action":  "include",
+                                                                 "slug":  "extension-roof-joists-structural-timber",
+                                                                 "crops":  [
+
+                                                                           ]
+                                                             },
+    "501313744_2708168232715372_2851331116513972580_n (1).jpg":  {
+                                                                     "action":  "exclude",
+                                                                     "reason":  "byte-identical duplicate of 501313744_2708168232715372_2851331116513972580_n.jpg"
+                                                                 },
+    "501313744_2708168232715372_2851331116513972580_n.jpg":  {
+                                                                 "action":  "include",
+                                                                 "slug":  "buff-tile-roof-velux-parapet-lead",
+                                                                 "crops":  [
+                                                                               {
+                                                                                   "suffix":  "detail",
+                                                                                   "rect":  [
+                                                                                                0,
+                                                                                                0,
+                                                                                                1,
+                                                                                                0.68
+                                                                                            ],
+                                                                                   "reason":  "removes foreground railings in bottom third"
+                                                                               }
+                                                                           ]
+                                                             },
+    "501608254_2708168136048715_3490747763429388246_n.jpg":  {
+                                                                 "action":  "include",
+                                                                 "slug":  "dormer-construction-membrane-battens",
+                                                                 "crops":  [
+
+                                                                           ]
+                                                             },
+    "501966644_2708168282715367_4611610691351775056_n.jpg":  {
+                                                                 "action":  "include",
+                                                                 "slug":  "new-slate-roof-conservation-rooflights",
+                                                                 "crops":  [
+                                                                               {
+                                                                                   "suffix":  "texture",
+                                                                                   "rect":  [
+                                                                                                0,
+                                                                                                0.35,
+                                                                                                1,
+                                                                                                0.55
+                                                                                            ],
+                                                                                   "reason":  "clean slate field band for texture use"
+                                                                               }
+                                                                           ]
+                                                             },
+    "WhatsApp Image 2026-08-13 at 12.04.19.jpeg":  {
+                                                       "action":  "exclude",
+                                                       "reason":  "phone screenshot with baked-in letterbox bars and home indicator; effective image area too small to recover"
+                                                   },
+    "WhatsApp Image 2026-08-13 at 12.04.27.jpeg":  {
+                                                       "action":  "include",
+                                                       "slug":  "clay-plain-tile-roof-lead-flashing",
+                                                       "crops":  [
+                                                                     {
+                                                                         "suffix":  "clean",
+                                                                         "rect":  [
+                                                                                      0,
+                                                                                      0,
+                                                                                      0.88,
+                                                                                      0.9
+                                                                                  ],
+                                                                         "reason":  "removes scaffold pole, OSB and debris bottom-right"
+                                                                     }
+                                                                 ]
+                                                   },
+    "WhatsApp Image 2026-08-13 at 12.04.57.jpeg":  {
+                                                       "action":  "include",
+                                                       "slug":  "bungalow-reroof-anthracite-tiles",
+                                                       "crops":  [
+                                                                     {
+                                                                         "suffix":  "hero",
+                                                                         "rect":  [
+                                                                                      0,
+                                                                                      0.12,
+                                                                                      1,
+                                                                                      0.585
+                                                                                  ],
+                                                                         "reason":  "16:7 elevation crop; removes road and verge, keeps sky band for headline"
+                                                                     }
+                                                                 ]
+                                                   },
+    "WhatsApp Image 2026-08-13 at 12.05.13.jpeg":  {
+                                                       "action":  "include",
+                                                       "slug":  "stone-chalet-reroof-pantiles-velux",
+                                                       "crops":  [
+
+                                                                 ],
+                                                       "masterCrop":  {
+                                                                          "reason":  "removes parked car with readable number plate lower-left and heavy foliage edges",
+                                                                          "rect":  [
+                                                                                       0.34,
+                                                                                       0.02,
+                                                                                       0.64,
+                                                                                       0.76
+                                                                                   ]
+                                                                      }
+                                                   },
+    "WhatsApp Image 2026-08-13 at 12.05.40 (1).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "reroof-membrane-battens-chimney-lead",
+                                                           "crops":  [
+
+                                                                     ]
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.40.jpeg":  {
+                                                       "action":  "include",
+                                                       "slug":  "reroof-membrane-battens-open-ridge",
+                                                       "crops":  [
+                                                                     {
+                                                                         "suffix":  "hero",
+                                                                         "rect":  [
+                                                                                      0,
+                                                                                      0,
+                                                                                      1,
+                                                                                      0.75
+                                                                                  ],
+                                                                         "reason":  "wide crop favouring the sky band upper-left for headline space"
+                                                                     }
+                                                                 ]
+                                                   },
+    "WhatsApp Image 2026-08-13 at 12.05.42 (1).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "roof-stripped-chimney-lead-soakers",
+                                                           "crops":  [
+
+                                                                     ]
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.42 (2).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "commercial-development-scaffold-team",
+                                                           "peopleVisible":  true,
+                                                           "crops":  [
+                                                                         {
+                                                                             "suffix":  "tight",
+                                                                             "rect":  [
+                                                                                          0.25,
+                                                                                          0.25,
+                                                                                          0.6,
+                                                                                          0.65
+                                                                                      ],
+                                                                             "reason":  "tighter frame on the two operatives and the building; reduces car park clutter"
+                                                                         }
+                                                                     ]
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.42 (3).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "heritage-steep-slate-hip-lead-roll",
+                                                           "crops":  [
+                                                                         {
+                                                                             "suffix":  "clean",
+                                                                             "rect":  [
+                                                                                          0.22,
+                                                                                          0,
+                                                                                          0.78,
+                                                                                          1
+                                                                                      ],
+                                                                             "reason":  "removes scaffold left of frame for a near-abstract slate composition"
+                                                                         }
+                                                                     ]
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.42 (4).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "heritage-stone-slate-reroof-city-skyline",
+                                                           "crops":  [
+                                                                         {
+                                                                             "suffix":  "hero",
+                                                                             "rect":  [
+                                                                                          0,
+                                                                                          0.1,
+                                                                                          1,
+                                                                                          0.62
+                                                                                      ],
+                                                                             "reason":  "16:7 crop keeping re-slated valley and city skyline with tower crane"
+                                                                         }
+                                                                     ]
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.42 (5).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "heritage-building-full-scaffold-spire",
+                                                           "crops":  [
+
+                                                                     ],
+                                                           "masterCrop":  {
+                                                                              "reason":  "removes third-party development hoarding at ground level",
+                                                                              "rect":  [
+                                                                                           0,
+                                                                                           0,
+                                                                                           1,
+                                                                                           0.76
+                                                                                       ]
+                                                                          }
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.42 (6).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "stone-slate-coursing-texture",
+                                                           "crops":  [
+
+                                                                     ],
+                                                           "masterCrop":  {
+                                                                              "reason":  "horizontal texture band from upper-left quadrant; avoids scaffold poles through centre and lower frame",
+                                                                              "rect":  [
+                                                                                           0.02,
+                                                                                           0.2,
+                                                                                           0.44,
+                                                                                           0.3
+                                                                                       ]
+                                                                          }
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.42 (7).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "stone-slate-reslate-half-laid",
+                                                           "crops":  [
+                                                                         {
+                                                                             "suffix":  "clean",
+                                                                             "rect":  [
+                                                                                          0.18,
+                                                                                          0,
+                                                                                          0.82,
+                                                                                          1
+                                                                                      ],
+                                                                             "reason":  "removes scaffold boards left of frame"
+                                                                         }
+                                                                     ]
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.42 (8).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "heritage-scaffold-gothic-finial",
+                                                           "crops":  [
+
+                                                                     ]
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.42.jpeg":  {
+                                                       "action":  "include",
+                                                       "slug":  "roof-stripped-to-rafters",
+                                                       "crops":  [
+
+                                                                 ]
+                                                   },
+    "WhatsApp Image 2026-08-13 at 12.05.43 (1).jpeg":  {
+                                                           "action":  "exclude",
+                                                           "reason":  "byte-identical duplicate of WhatsApp Image 2026-08-13 at 12.05.43.jpeg"
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.43 (2).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "stone-slate-steep-pitch-blue-sky",
+                                                           "crops":  [
+                                                                         {
+                                                                             "suffix":  "clean",
+                                                                             "rect":  [
+                                                                                          0.28,
+                                                                                          0,
+                                                                                          0.72,
+                                                                                          1
+                                                                                      ],
+                                                                             "reason":  "removes scaffold and membrane left of frame; clean slate-and-sky composition"
+                                                                         }
+                                                                     ]
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.43 (3).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "operative-ladder-church-finial",
+                                                           "peopleVisible":  true,
+                                                           "crops":  [
+
+                                                                     ],
+                                                           "masterCrop":  {
+                                                                              "reason":  "removes blurred dark object bottom-left corner",
+                                                                              "rect":  [
+                                                                                           0.1,
+                                                                                           0,
+                                                                                           0.9,
+                                                                                           1
+                                                                                       ]
+                                                                          }
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.43 (4).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "roof-valleys-battened-membrane",
+                                                           "crops":  [
+
+                                                                     ],
+                                                           "masterCrop":  {
+                                                                              "reason":  "removes blurred thumb/clothing intrusion on left edge",
+                                                                              "rect":  [
+                                                                                           0.16,
+                                                                                           0,
+                                                                                           0.84,
+                                                                                           1
+                                                                                       ]
+                                                                          }
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.43.jpeg":  {
+                                                       "action":  "include",
+                                                       "slug":  "heritage-scaffold-run-ridge-stones",
+                                                       "crops":  [
+
+                                                                 ]
+                                                   },
+    "WhatsApp Image 2026-08-13 at 12.05.56 (1).jpeg":  {
+                                                           "action":  "include",
+                                                           "slug":  "oak-framed-garden-building-stone-slate-roof",
+                                                           "crops":  [
+                                                                         {
+                                                                             "suffix":  "hero",
+                                                                             "rect":  [
+                                                                                          0,
+                                                                                          0.04,
+                                                                                          0.92,
+                                                                                          0.92
+                                                                                      ],
+                                                                             "reason":  "crops brick neighbour right edge; pylon top-right handled by hero art direction (panel/scrim zone), clone-retouch rejected as visibly artificial"
+                                                                         }
+                                                                     ]
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.56.jpeg":  {
+                                                       "action":  "include",
+                                                       "slug":  "oak-framed-garden-building-roof-deck",
+                                                       "crops":  [
+                                                                     {
+                                                                         "suffix":  "clean",
+                                                                         "rect":  [
+                                                                                      0.12,
+                                                                                      0,
+                                                                                      0.88,
+                                                                                      1
+                                                                                  ],
+                                                                         "reason":  "removes van on left edge"
+                                                                     }
+                                                                 ]
+                                                   },
+    "WhatsApp Image 2026-08-13 at 12.05.57 (1).jpeg":  {
+                                                           "action":  "exclude",
+                                                           "reason":  "soft focus, dull light, 40 percent empty tarmac; below usable quality"
+                                                       },
+    "WhatsApp Image 2026-08-13 at 12.05.57.jpeg":  {
+                                                       "action":  "exclude",
+                                                       "reason":  "stored rotated 90 degrees, hazy blown sky, low resolution; marginal even after rotation"
+                                                   },
+    "WhatsApp Image 2026-08-13 at 12.06.13.jpeg":  {
+                                                       "action":  "include",
+                                                       "slug":  "stone-country-house-slate-roof",
+                                                       "crops":  [
+
+                                                                 ],
+                                                       "masterCrop":  {
+                                                                          "reason":  "isolates the house above the wall line; removes plant, vehicles, van roof rack and readable number plate",
+                                                                          "rect":  [
+                                                                                       0.38,
+                                                                                       0.06,
+                                                                                       0.62,
+                                                                                       0.435
+                                                                                   ]
+                                                                      }
+                                                   },
+    "WhatsApp Image 2026-08-13 at 12.06.34.jpeg":  {
+                                                       "action":  "include",
+                                                       "slug":  "city-centre-commercial-access-work",
+                                                       "crops":  [
+
+                                                                 ],
+                                                       "masterCrop":  {
+                                                                          "reason":  "frames the access platform against the Victorian block; removes third-party shopfront signage band at street level",
+                                                                          "rect":  [
+                                                                                       0.3,
+                                                                                       0.1,
+                                                                                       0.55,
+                                                                                       0.6
+                                                                                   ]
+                                                                      }
+                                                   }
+}

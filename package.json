@@ -1,0 +1,24 @@
+{
+  "name": "ww-roofing-and-building",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "photos": "node scripts/prepare-photos.mjs",
+    "screenshots": "node scripts/screenshots.mjs",
+    "a11y": "node scripts/check-a11y.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.1.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "linkinator": "^6.1.2",
+    "playwright": "^1.49.1",
+    "sharp": "^0.33.5"
+  }
+}

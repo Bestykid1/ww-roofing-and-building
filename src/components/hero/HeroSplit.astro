@@ -1,0 +1,163 @@
+---
+import { business } from '../../lib/business';
+import CourseLines from '../craft/CourseLines.astro';
+import Photo from '../media/Photo.astro';
+
+interface Props {
+  photoSlug: string;
+  photoVariant?: string;
+  kicker: string;
+  heading: string;
+  lede: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+  /** h1 renders by default; pass "h2" etc. for interior pages. */
+  headingLevel?: 'h1' | 'h2';
+}
+
+const {
+  photoSlug,
+  photoVariant,
+  kicker,
+  heading,
+  lede,
+  primaryHref = '/contact/',
+  primaryLabel = 'Request a quote',
+  secondaryHref = '/projects/',
+  secondaryLabel = 'View our work',
+  headingLevel: Heading = 'h1',
+} = Astro.props;
+---
+
+<section class="hero-split on-dark">
+  <div class="hero-copy">
+    <div class="hero-copy-inner">
+      <p class="kicker hero-kicker">{kicker}</p>
+      <Heading class="hero-heading">{heading}</Heading>
+      <p class="hero-lede">{lede}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={primaryHref}>{primaryLabel}</a>
+        <a class="btn btn-outline" href={secondaryHref}>{secondaryLabel}</a>
+      </div>
+      <p class="hero-phone">
+        Prefer to talk it through?
+        <a href={business.phoneHref}>{business.phone}</a>
+      </p>
+    </div>
+    <div class="hero-course" aria-hidden="true">
+      <CourseLines width={200} />
+    </div>
+  </div>
+  <div class="hero-media">
+    <Photo
+      slug={photoSlug}
+      variant={photoVariant}
+      role="hero"
+      sizes="(max-width: 900px) 100vw, 58vw"
+      loading="eager"
+      class="hero-img"
+    />
+  </div>
+</section>
+
+<style>
+  .hero-split {
+    display: grid;
+    grid-template-columns: minmax(380px, 5fr) 7fr;
+    background: var(--surface-slate);
+    color: var(--ink-on-dark);
+    min-height: min(74vh, 680px);
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: clamp(2rem, 4vw, 4rem);
+    padding-inline-start: max(var(--gutter), calc((100vw - var(--wrap-max)) / 2 + var(--gutter)));
+  }
+
+  .hero-kicker {
+    color: var(--ink-on-dark-soft);
+  }
+
+  .hero-heading {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--text-hero);
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .hero-lede {
+    margin-block-start: var(--space-3);
+    color: var(--ink-on-dark-soft);
+    font-size: var(--text-l);
+    line-height: 1.5;
+    max-width: 40ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-block-start: var(--space-4);
+  }
+
+  .hero-phone {
+    margin-block-start: var(--space-3);
+    font-size: var(--text-s);
+    color: var(--ink-on-dark-soft);
+  }
+
+  .hero-phone a {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--timber);
+    margin-inline-start: 0.35rem;
+  }
+
+  .hero-phone a:hover {
+    color: var(--accent-bright);
+  }
+
+  .hero-course {
+    margin-block-start: var(--space-5);
+    color: var(--line-on-dark);
+  }
+
+  .hero-media {
+    overflow: hidden;
+  }
+
+  .hero-media :global(picture) {
+    display: block;
+    height: 100%;
+  }
+
+  .hero-media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .hero-split {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+
+    .hero-media {
+      order: -1;
+      max-height: 44vh;
+    }
+
+    .hero-course {
+      display: none;
+    }
+  }
+</style>

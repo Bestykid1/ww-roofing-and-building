@@ -1,0 +1,130 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import ContactForm from '../../components/forms/ContactForm.astro';
+import { business } from '../../lib/business';
+---
+
+<Base
+  title="Contact WW Roofing & Building | Leeds Roofers"
+  description="Contact WW Roofing & Building in Leeds for roof repairs, re-roofs, slating, tiling, extensions and subcontract roofing. Call or send an enquiry."
+  hideContactBar
+>
+  <section class="contact-page">
+    <div class="wrap contact-grid">
+      <div class="contact-intro">
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
+        <p class="kicker" style="margin-top: var(--space-4)">Contact</p>
+        <h1>Tell us about the job</h1>
+        <p class="contact-lede">
+          A few details is all it takes. Describe the problem or the project, and we
+          will come back with an honest first steer and arrange to look at it properly.
+        </p>
+
+        <div class="contact-direct on-dark">
+          <h2>Prefer to talk?</h2>
+          <p class="cd-phone">
+            <a href={business.phoneHref}>{business.phone}</a>
+          </p>
+          <p class="cd-note">
+            If we are on a roof and cannot answer, leave a message and we will ring you
+            back.
+          </p>
+          <p class="cd-email">
+            <a href={business.emailHref}>{business.email}</a>
+          </p>
+        </div>
+
+        <div class="contact-covering">
+          <h2>Covering</h2>
+          <p>
+            {business.serviceAreaSummary}, from our base in {business.baseLocality}.
+            <a href="/areas/">Full coverage details</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-form-col">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .contact-page {
+    padding-block: var(--space-5) var(--space-section);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 5fr) 7fr;
+    gap: var(--space-6);
+    align-items: start;
+  }
+
+  .contact-lede {
+    margin-block-start: var(--space-3);
+    font-size: var(--text-l);
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  .contact-direct {
+    margin-block-start: var(--space-5);
+    background: var(--surface-slate);
+    color: var(--ink-on-dark);
+    padding: var(--space-4);
+  }
+
+  .contact-direct h2,
+  .contact-covering h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-block-end: var(--space-2);
+  }
+
+  .contact-direct h2 {
+    color: var(--ink-on-dark-soft);
+  }
+
+  .cd-phone a {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .cd-phone a:hover {
+    color: var(--accent-bright);
+  }
+
+  .cd-note {
+    margin-block-start: var(--space-2);
+    font-size: var(--text-s);
+    color: var(--ink-on-dark-soft);
+  }
+
+  .cd-email {
+    margin-block-start: var(--space-3);
+  }
+
+  .contact-covering {
+    margin-block-start: var(--space-4);
+  }
+
+  .contact-covering p {
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+</style>

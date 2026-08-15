@@ -1,0 +1,84 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import HeroFull from '../../components/hero/HeroFull.astro';
+import EvidenceGallery from '../../components/sections/EvidenceGallery.astro';
+import FaqBlock from '../../components/sections/FaqBlock.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+
+const faqs = [
+  {
+    q: 'Will you actually turn up?',
+    a: 'Yes. If a date moves for weather or materials, you get a call before the date, not silence on the day. It costs nothing to keep people informed and we know it is the thing homeowners worry about most.',
+  },
+  {
+    q: 'How do quotes work?',
+    a: 'We visit, look at the roof properly, and send a written price that says what is included. For repairs we are happy to give a first opinion from photos you send, then confirm on site.',
+  },
+  {
+    q: 'What about the mess?',
+    a: 'Stripped coverings go down a chute into a skip, not off the scaffold. The site is swept at the end of every day and the garden goes back how we found it.',
+  },
+  {
+    q: 'Do you handle the scaffold and skips?',
+    a: 'Yes, all arranged by us and included in the price you are quoted. You should not have to project-manage your own roof.',
+  },
+];
+---
+
+<Base
+  title="Residential Roofing in Leeds | WW Roofing & Building"
+  description="Roofing for homeowners across Leeds: repairs, re-roofs, slating, tiling and roof windows, with clear written prices, tidy sites and straight answers."
+>
+  <HeroFull
+    photoSlug="bungalow-reroof-anthracite-tiles"
+    photoVariant="hero"
+    kicker="For homeowners"
+    heading="Your roof, sorted properly"
+    lede="A roof is the most expensive thing most people ever fix on their house. You deserve straight answers about what it needs, a written price that holds, and a crew that treats your home with respect."
+    objectPosition="center 65%"
+  />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs
+      items={[
+        { label: 'Home', href: '/' },
+        { label: 'Who we work with', href: '/sectors/' },
+        { label: 'Homeowners' },
+      ]}
+    />
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap prose">
+      <h2>What you can expect</h2>
+      <p>
+        An honest assessment first: plenty of roofs we look at need a repair, not a
+        replacement, and we will tell you which is which with photographs from the
+        scaffold or ladder so you can see what we see. When bigger work is genuinely
+        needed, you get a clear written price, a realistic programme, and the job done
+        by the people who quoted it.
+      </p>
+      <p>
+        Everything a house roof needs sits under one roof here:
+        <a href="/services/roof-repairs/">repairs</a>,
+        <a href="/services/re-roofing/">full re-roofs</a>,
+        <a href="/services/slating/">slating</a>,
+        <a href="/services/tiling/">tiling</a>,
+        <a href="/services/velux-roof-windows/">roof windows</a> and
+        <a href="/services/leadwork-and-roofline/">leadwork and roofline</a>, plus
+        <a href="/construction/extensions/">extensions</a> when the project grows.
+      </p>
+    </div>
+  </section>
+
+  <EvidenceGallery
+    categories={['re-roofing', 'tiling', 'velux']}
+    heading="Recent residential work"
+    excludeSlugs={['bungalow-reroof-anthracite-tiles']}
+  />
+
+  <FaqBlock faqs={faqs} heading="The questions every homeowner asks" />
+
+  <CtaBand />
+</Base>

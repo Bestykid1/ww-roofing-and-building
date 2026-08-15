@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+import HeroText from '../components/hero/HeroText.astro';
+import { business } from '../lib/business';
+---
+
+<Base
+  title="Website Terms | WW Roofing & Building"
+  description="Terms of use for the WW Roofing & Building website, including how quotations work and the status of information published on the site."
+  noindex
+  hideContactBar
+>
+  <HeroText kicker="Legal" heading="Website terms" />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Terms' }]} />
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap prose">
+      <h2>About this website</h2>
+      <p>
+        This website is operated by {business.name} of {business.baseLocality}. [LEGAL
+        ENTITY NAME, TRADING STATUS AND ADDRESS TO BE CONFIRMED].
+      </p>
+      <h2>Information on this site</h2>
+      <p>
+        Content on this site describes our services in general terms. Every roof and
+        building is different: nothing here is a survey of your property or a fixed
+        price for work on it. Advice about your own roof is only given after we have
+        looked at it, and prices are only those set out in a written quotation.
+      </p>
+      <h2>Photography</h2>
+      <p>
+        Photographs on this site are of our own work and must not be reproduced without
+        permission.
+      </p>
+      <h2>Quotations</h2>
+      <p>
+        Written quotations state what they include and how long they remain open for
+        acceptance. Terms applying to carried-out work are provided with the quotation.
+        [CONFIRM QUOTE VALIDITY PERIOD AND WORK TERMS].
+      </p>
+    </div>
+  </section>
+</Base>

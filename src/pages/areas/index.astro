@@ -1,0 +1,130 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import HeroText from '../../components/hero/HeroText.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+import { areasServed, business } from '../../lib/business';
+
+const areaPages = (await getCollection('areas')).sort((a, b) => a.data.order - b.data.order);
+const dedicated = new Set(areaPages.map((a) => a.id));
+const otherAreas = areasServed.filter(
+  (a) => !dedicated.has(a.toLowerCase().replaceAll(' ', '-')),
+);
+---
+
+<Base
+  title="Areas We Cover | Roofers Across Leeds | WW Roofing"
+  description="WW Roofing & Building works across Leeds and the surrounding areas from a base in Crossgates: east and north Leeds, Garforth, Wetherby, Roundhay and beyond."
+>
+  <HeroText
+    kicker="Coverage"
+    heading="Areas we cover"
+    lede={`WW Roofing & Building is based in ${business.baseLocality}. Most of our work is within the city and the ring of towns and villages around it, and we quote anywhere we can reach, scaffold and service properly.`}
+  />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Areas' }]} />
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap areas-layout">
+      <div class="prose">
+        <h2>How coverage works</h2>
+        <p>
+          Roofing is local work. Scaffold, skips, deliveries and repeat visits all get
+          harder with distance, so we concentrate on jobs we can run properly from east
+          Leeds. In practice that means the whole of Leeds and a broad ring around it,
+          with Selby and Wetherby about the edge of normal range.
+        </p>
+        <p>
+          A few areas get their own page below because we can say something genuinely
+          useful about the housing there. The absence of a page does not mean the
+          absence of coverage: if you can see your area in the list, or you are close to
+          one that is, we cover you.
+        </p>
+        <h2>Quoting is the same everywhere</h2>
+        <p>
+          We visit, measure, and look at the roof itself rather than pricing from the
+          kerb. You get a written price that says what is included, and if anything can
+          only be known once work starts, it is flagged and priced as a rate up front.
+        </p>
+      </div>
+
+      <aside>
+        <h2 class="areas-side-head">Dedicated area pages</h2>
+        <ul class="areas-links">
+          {areaPages.map((a) => (
+            <li><a href={`/areas/${a.id}/`}>{a.data.title}</a></li>
+          ))}
+        </ul>
+        <h2 class="areas-side-head">Also covered</h2>
+        <ul class="areas-plain">
+          {otherAreas.map((a) => (
+            <li>{a}</li>
+          ))}
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Near us but not listed?"
+    note="Ask. If we can reach it and service it properly, the answer is usually yes."
+  />
+</Base>
+
+<style>
+  .areas-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(240px, 4fr);
+    gap: var(--space-6);
+  }
+
+  .areas-side-head {
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-block: var(--space-4) var(--space-2);
+    border-top: 2px solid var(--surface-slate);
+    padding-block-start: var(--space-3);
+  }
+
+  .areas-side-head:first-child {
+    margin-block-start: 0;
+  }
+
+  .areas-links,
+  .areas-plain {
+    list-style: none;
+    padding: 0;
+  }
+
+  .areas-links li {
+    padding-block: 0.4rem;
+  }
+
+  .areas-links a {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .areas-plain {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem var(--space-3);
+    color: var(--ink-soft);
+    font-size: var(--text-s);
+  }
+
+  @media (max-width: 800px) {
+    .areas-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+</style>

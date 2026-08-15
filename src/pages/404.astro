@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import { business } from '../lib/business';
+---
+
+<Base
+  title="Page Not Found | WW Roofing & Building"
+  description="That page could not be found. Head back to the WW Roofing & Building homepage or browse our roofing services and recent work."
+  noindex
+>
+  <section class="wrap section nf">
+    <p class="kicker">404</p>
+    <h1>That page has slipped off the roof</h1>
+    <p class="nf-lede">
+      The address does not exist, or it has moved. The links below will get you back to
+      solid ground, or call {business.phone} and ask us directly.
+    </p>
+    <div class="nf-links">
+      <a class="btn btn-primary" href="/">Homepage</a>
+      <a class="btn btn-outline" href="/services/">Roofing services</a>
+      <a class="btn btn-outline" href="/projects/">Our work</a>
+      <a class="btn btn-outline" href="/contact/">Contact</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf {
+    min-height: 50vh;
+  }
+
+  .nf-lede {
+    margin-block-start: var(--space-3);
+    font-size: var(--text-l);
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+
+  .nf-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-block-start: var(--space-5);
+  }
+</style>

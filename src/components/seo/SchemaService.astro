@@ -1,0 +1,31 @@
+---
+import { business } from '../../lib/business';
+
+interface Props {
+  name: string;
+  description: string;
+}
+
+/**
+ * Service JSON-LD for service pages, fed from the same collection entry the
+ * page renders so schema cannot drift from visible content.
+ */
+const { name, description } = Astro.props;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name,
+  description,
+  serviceType: name,
+  url: new URL(Astro.url.pathname, Astro.site).toString(),
+  areaServed: { '@type': 'Place', name: 'Leeds and surrounding areas' },
+  provider: {
+    '@type': 'RoofingContractor',
+    name: business.name,
+    url: Astro.site?.toString(),
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

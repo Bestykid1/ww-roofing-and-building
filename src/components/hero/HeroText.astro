@@ -1,0 +1,68 @@
+---
+import CourseLines from '../craft/CourseLines.astro';
+
+interface Props {
+  kicker: string;
+  heading: string;
+  lede?: string;
+}
+
+const { kicker, heading, lede } = Astro.props;
+---
+
+<header class="hero-text">
+  <div class="wrap ht-grid">
+    <div>
+      <p class="kicker">{kicker}</p>
+      <h1>{heading}</h1>
+      {lede && <p class="ht-lede">{lede}</p>}
+    </div>
+    <div class="ht-motif" aria-hidden="true">
+      <CourseLines width={300} />
+    </div>
+  </div>
+</header>
+
+<style>
+  .hero-text {
+    background: var(--surface-stone);
+    padding-block: var(--space-6) var(--space-5);
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .ht-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 8fr) minmax(200px, 4fr);
+    gap: var(--space-5);
+    align-items: end;
+  }
+
+  .hero-text h1 {
+    font-size: var(--text-2xl);
+    max-width: 18ch;
+  }
+
+  .ht-lede {
+    margin-block-start: var(--space-3);
+    font-size: var(--text-l);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 52ch;
+  }
+
+  .ht-motif {
+    justify-self: end;
+    color: var(--line-strong);
+    padding-block-end: 0.4rem;
+  }
+
+  @media (max-width: 800px) {
+    .ht-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ht-motif {
+      display: none;
+    }
+  }
+</style>

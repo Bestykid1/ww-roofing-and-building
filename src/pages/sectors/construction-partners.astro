@@ -1,0 +1,241 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import HeroSplit from '../../components/hero/HeroSplit.astro';
+import Photo from '../../components/media/Photo.astro';
+import FaqBlock from '../../components/sections/FaqBlock.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+import { business } from '../../lib/business';
+
+const faqs = [
+  {
+    q: 'How do you price subcontract roofing work?',
+    a: 'From your drawings and specification wherever they exist, as a package price or per plot. The quotation states what is included, what is provisional and the rates that apply if the provisional items land. No surprises at valuation.',
+  },
+  {
+    q: 'Can you work to our programme?',
+    a: 'Yes, and we would rather see the programme before we price than promise blind. If a date is at risk from weather or preceding trades, you hear it from us early, with options.',
+  },
+  {
+    q: 'How do you handle site requirements?',
+    a: 'Send your induction, RAMS format and site rules with the enquiry and we build them into the price and the plan. Our operatives turn up inducted, equipped and expected.',
+  },
+  {
+    q: 'What does handover look like?',
+    a: 'A roof that passes inspection first time, photographic records of the covered-up details taken as we work, and any O&M information your handover pack needs.',
+  },
+];
+---
+
+<Base
+  title="Roofing Subcontractor Leeds & Yorkshire | WW Roofing"
+  description="WW Roofing & Building works as a roofing subcontractor for main contractors, builders and developers across Leeds and Yorkshire: priced from drawings, on programme."
+>
+  <HeroSplit
+    photoSlug="heritage-stone-slate-reroof-city-skyline"
+    kicker="For main contractors & developers"
+    heading="The roofing package, handled."
+    lede="Priced from drawings. On programme. Coordinated with your trades. Handed over without snags. WW works as a roofing subcontractor for builders, developers and main contractors across Leeds and Yorkshire."
+    primaryHref="/contact/"
+    primaryLabel="Discuss a package"
+    secondaryHref="/projects/"
+    secondaryLabel="See our work"
+  />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs
+      items={[
+        { label: 'Home', href: '/' },
+        { label: 'Who we work with', href: '/sectors/' },
+        { label: 'Construction partners' },
+      ]}
+    />
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap cp-grid">
+      <div class="prose">
+        <h2>What working with WW looks like</h2>
+        <p>
+          Subcontracting lives or dies on three things: whether the price was honest,
+          whether the programme holds, and whether anyone answers the phone when
+          something changes. We built this side of the business around those three.
+        </p>
+        <p>
+          You get one point of contact who knows your job. Enquiries are answered, not
+          managed. If the drawings contain a detail that will not work on the roof, we
+          flag it at pricing stage, because the cheap moment to fix a bad detail is
+          before anybody builds it.
+        </p>
+        <h2>On site</h2>
+        <p>
+          Our operatives work inducted and to your site rules, keep a clean scaffold,
+          and coordinate lifting and loading with your site management rather than
+          around them. Covered-up work is photographed as we go, so your records show
+          the membrane, the battens and the leadwork you paid for, not just the finished
+          surface.
+        </p>
+        <h2>The work itself</h2>
+        <p>
+          Pitched roofing in slate, stone slate, concrete and clay tile; heritage
+          re-slating; leadwork; dormers and rooflights. The
+          <a href="/projects/">projects archive</a> shows the standard, including
+          in-progress photography, which is the honest way to judge a roofing
+          subcontractor.
+        </p>
+      </div>
+
+      <aside class="cp-aside on-dark">
+        <h2>Send an enquiry with</h2>
+        <ul>
+          <li>Drawings and roof specification</li>
+          <li>Programme dates for the roofing package</li>
+          <li>Site address and access notes</li>
+          <li>Your induction and RAMS requirements</li>
+        </ul>
+        <p class="cp-aside-note">
+          We will come back with a package price, lead time and any detail queries.
+        </p>
+        <p><a class="btn btn-primary" href="/contact/">Discuss a subcontract package</a></p>
+        <p class="cp-aside-phone">
+          <a href={business.phoneHref}>{business.phone}</a>
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="wrap-wide">
+      <p class="kicker">The record you hand over</p>
+      <div class="cp-record">
+        <figure>
+          <Photo
+            slug="roof-valleys-battened-membrane"
+            role="grid"
+            sizes="(max-width: 900px) 100vw, 44vw"
+          />
+          <figcaption>
+            Covered-up work is photographed as it goes on: valleys, membrane and
+            battening recorded before the coverings close them in.
+          </figcaption>
+        </figure>
+        <figure>
+          <Photo
+            slug="heritage-scaffold-run-ridge-stones"
+            role="grid"
+            sizes="(max-width: 900px) 100vw, 44vw"
+          />
+          <figcaption>
+            Materials staged and the scaffold kept clean; the state of a
+            subcontractor's scaffold tells you how the job is run.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <FaqBlock faqs={faqs} heading="Working with us" />
+
+  <CtaBand
+    title="Got a roofing package to place?"
+    note="Send the drawings over and we will price it properly."
+  />
+</Base>
+
+<style>
+  .cp-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(280px, 4fr);
+    gap: var(--space-6);
+    align-items: start;
+  }
+
+  .cp-aside {
+    background: var(--surface-slate);
+    color: var(--ink-on-dark);
+    padding: var(--space-5);
+    position: sticky;
+    top: var(--space-4);
+  }
+
+  .cp-aside h2 {
+    font-size: var(--text-xs);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-on-dark-soft);
+    margin-block-end: var(--space-3);
+  }
+
+  .cp-aside ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-s);
+  }
+
+  .cp-aside ul li::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 2px;
+    background: var(--timber);
+    margin-inline-end: 0.6rem;
+    vertical-align: middle;
+  }
+
+  .cp-aside-note {
+    margin-block: var(--space-3);
+    color: var(--ink-on-dark-soft);
+    font-size: var(--text-s);
+  }
+
+  .cp-aside-phone {
+    margin-block-start: var(--space-3);
+  }
+
+  .cp-aside-phone a {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--timber);
+  }
+
+  .cp-record {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    margin-block-start: var(--space-3);
+  }
+
+  .cp-record figure :global(img) {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .cp-record figcaption {
+    font-size: var(--text-s);
+    color: var(--ink-soft);
+    padding-block-start: 0.6rem;
+    max-width: 52ch;
+  }
+
+  @media (max-width: 900px) {
+    .cp-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+
+    .cp-aside {
+      position: static;
+    }
+
+    .cp-record {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

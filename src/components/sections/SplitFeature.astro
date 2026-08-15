@@ -1,0 +1,139 @@
+---
+import Photo from '../media/Photo.astro';
+
+interface Props {
+  kicker: string;
+  heading: string;
+  photoSlug: string;
+  photoVariant?: string;
+  /** image on the left or right of the text column */
+  mediaSide?: 'left' | 'right';
+  /** dark charcoal band */
+  dark?: boolean;
+  ctaHref?: string;
+  ctaLabel?: string;
+  /** wider or narrower media column */
+  ratio?: 'media-wide' | 'even';
+  photoCaption?: string;
+}
+
+const {
+  kicker,
+  heading,
+  photoSlug,
+  photoVariant,
+  mediaSide = 'right',
+  dark = false,
+  ctaHref,
+  ctaLabel,
+  ratio = 'media-wide',
+  photoCaption,
+} = Astro.props;
+---
+
+<section class:list={['split-feature', { 'on-dark': dark, dark, 'media-left': mediaSide === 'left', even: ratio === 'even' }]}>
+  <div class="wrap sf-grid">
+    <div class="sf-copy">
+      <p class="kicker">{kicker}</p>
+      <h2>{heading}</h2>
+      <div class="sf-body prose">
+        <slot />
+      </div>
+      {ctaHref && ctaLabel && (
+        <p class="sf-cta">
+          <a class="btn btn-outline" href={ctaHref}>{ctaLabel}</a>
+        </p>
+      )}
+    </div>
+    <figure class="sf-media">
+      <Photo
+        slug={photoSlug}
+        variant={photoVariant}
+        role="hero"
+        sizes="(max-width: 900px) 100vw, 56vw"
+        class="sf-img"
+      />
+      {photoCaption && <figcaption>{photoCaption}</figcaption>}
+    </figure>
+  </div>
+</section>
+
+<style>
+  .split-feature {
+    padding-block: var(--space-section);
+  }
+
+  .split-feature.dark {
+    background: var(--surface-slate);
+    color: var(--ink-on-dark);
+  }
+
+  .sf-grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(var(--space-4), 4vw, var(--space-6));
+    align-items: center;
+  }
+
+  .even .sf-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .media-left .sf-grid > .sf-copy {
+    order: 2;
+  }
+
+  .media-left .sf-grid > .sf-media {
+    order: 1;
+  }
+
+  .sf-body {
+    margin-block-start: var(--space-3);
+    color: var(--ink-soft);
+  }
+
+  .dark .sf-body {
+    color: var(--ink-on-dark-soft);
+  }
+
+  .sf-cta {
+    margin-block-start: var(--space-4);
+  }
+
+  .sf-media :global(img) {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .sf-media figcaption {
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding-block-start: 0.6rem;
+    border-bottom: 2px solid var(--timber);
+    display: inline-block;
+    padding-bottom: 0.35rem;
+  }
+
+  .dark .sf-media figcaption {
+    color: var(--ink-on-dark-soft);
+  }
+
+  @media (max-width: 900px) {
+    .sf-grid,
+    .even .sf-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .media-left .sf-grid > .sf-media {
+      order: 2;
+    }
+
+    .media-left .sf-grid > .sf-copy {
+      order: 1;
+    }
+  }
+</style>

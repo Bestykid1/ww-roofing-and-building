@@ -1,0 +1,40 @@
+---
+/**
+ * Diminishing slate coursing: candidate signature motif. Course spacing
+ * shrinks toward the top, as graded stone slate does from eaves to ridge;
+ * vertical ticks are the staggered joints. Drawn in currentColor.
+ */
+interface Props {
+  class?: string;
+  width?: number;
+}
+const { class: className, width = 220 } = Astro.props;
+---
+
+<svg
+  class={className}
+  width={width}
+  height={Math.round((width / 220) * 34)}
+  viewBox="0 0 220 34"
+  fill="none"
+  aria-hidden="true"
+>
+  <g stroke="currentColor" stroke-width="1.5">
+    <line x1="0" y1="32" x2="220" y2="32" />
+    <line x1="0" y1="21" x2="220" y2="21" />
+    <line x1="0" y1="12.5" x2="220" y2="12.5" />
+    <line x1="0" y1="6" x2="220" y2="6" />
+    <line x1="0" y1="1.5" x2="220" y2="1.5" />
+    <!-- staggered joints, eaves to ridge -->
+    <line x1="38" y1="32" x2="38" y2="21" />
+    <line x1="118" y1="32" x2="118" y2="21" />
+    <line x1="186" y1="32" x2="186" y2="21" />
+    <line x1="74" y1="21" x2="74" y2="12.5" />
+    <line x1="152" y1="21" x2="152" y2="12.5" />
+    <line x1="26" y1="12.5" x2="26" y2="6" />
+    <line x1="102" y1="12.5" x2="102" y2="6" />
+    <line x1="172" y1="12.5" x2="172" y2="6" />
+    <line x1="58" y1="6" x2="58" y2="1.5" />
+    <line x1="132" y1="6" x2="132" y2="1.5" />
+  </g>
+</svg>

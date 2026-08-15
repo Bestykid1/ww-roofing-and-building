@@ -1,0 +1,272 @@
+---
+import { Image } from 'astro:assets';
+import { business } from '../../lib/business';
+import mark from '../../assets/logo/mark.png';
+
+const nav = [
+  { label: 'Services', href: '/services/' },
+  { label: 'Construction', href: '/construction/' },
+  { label: 'Our Work', href: '/projects/' },
+  { label: 'Who We Work With', href: '/sectors/' },
+  { label: 'Contact', href: '/contact/' },
+];
+const path = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+
+<header class="site-header on-dark">
+  <div class="wrap-wide header-grid">
+    <a class="brand" href="/">
+      <Image src={mark} alt="" width="76" densities={[1, 2]} class="brand-mark" />
+      <span class="brand-word">
+        <span class="brand-ww">WW</span>
+        <span class="brand-sub">Roofing &amp; Building</span>
+      </span>
+      <span class="visually-hidden">{business.name} - home</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main">
+      <ul>
+        {nav.map((item) => (
+          <li>
+            <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="phone-link" href={business.phoneHref}>{business.phone}</a>
+    </div>
+
+    <details class="mobile-nav">
+      <summary aria-label="Menu">
+        <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="menu-word">Menu</span>
+      </summary>
+      <nav aria-label="Main mobile">
+        <ul>
+          {nav.map((item) => (
+            <li>
+              <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+          <li class="mobile-nav-phone">
+            <a href={business.phoneHref}>Call {business.phone}</a>
+          </li>
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: var(--surface-slate);
+    color: var(--ink-on-dark);
+    border-bottom: 1px solid var(--line-on-dark);
+    position: relative;
+    z-index: 20;
+  }
+
+  .header-grid {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    min-height: var(--header-h);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .brand-mark {
+    mix-blend-mode: screen;
+    height: 2.5rem;
+    width: auto;
+  }
+
+  .brand-word {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    font-family: var(--font-display);
+  }
+
+  .brand-ww {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  .brand-sub {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-on-dark-soft);
+    margin-top: 0.25rem;
+  }
+
+  .desktop-nav {
+    margin-inline-start: auto;
+  }
+
+  .desktop-nav ul {
+    display: flex;
+    gap: clamp(0.9rem, 2vw, 1.9rem);
+    list-style: none;
+    padding: 0;
+  }
+
+  .desktop-nav a {
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink-on-dark-soft);
+    padding-block: 0.4rem;
+    border-bottom: 2px solid transparent;
+  }
+
+  .desktop-nav a:hover {
+    color: var(--ink-on-dark);
+  }
+
+  .desktop-nav a[aria-current='page'] {
+    color: var(--ink-on-dark);
+    border-bottom-color: var(--accent-bright);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  /* Mobile */
+  .mobile-nav {
+    display: none;
+    margin-inline-start: auto;
+  }
+
+  .mobile-nav summary {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    list-style: none;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+  }
+
+  .mobile-nav summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .burger {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .burger span {
+    width: 1.15rem;
+    height: 2px;
+    background: currentColor;
+    transition: transform 150ms ease, opacity 150ms ease;
+  }
+
+  .mobile-nav[open] .burger span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .mobile-nav[open] .burger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-nav[open] .burger span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .mobile-nav nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: var(--surface-slate);
+    border-bottom: 1px solid var(--line-on-dark);
+  }
+
+  .mobile-nav nav ul {
+    list-style: none;
+    padding: var(--space-2) var(--gutter) var(--space-4);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-nav nav a {
+    display: block;
+    padding: 0.85rem 0;
+    font-family: var(--font-display);
+    font-size: var(--text-s);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink-on-dark);
+    border-bottom: 1px solid var(--line-on-dark);
+  }
+
+  .mobile-nav nav a[aria-current='page'] {
+    color: var(--accent-bright);
+  }
+
+  .mobile-nav-phone a {
+    color: var(--accent-bright);
+  }
+
+  @media (max-width: 899px) {
+    .desktop-nav,
+    .header-actions {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  // Close the mobile panel on Escape or outside click; plain enhancement,
+  // the details element works without it.
+  const nav = document.querySelector('.mobile-nav');
+  if (nav instanceof HTMLDetailsElement) {
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.open) {
+        nav.open = false;
+        nav.querySelector('summary')?.focus();
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (nav.open && e.target instanceof Node && !nav.contains(e.target)) {
+        nav.open = false;
+      }
+    });
+  }
+</script>

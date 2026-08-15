@@ -1,0 +1,61 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import HeroText from '../../components/hero/HeroText.astro';
+import EvidenceGallery from '../../components/sections/EvidenceGallery.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+---
+
+<Base
+  title="House Extensions Leeds | WW Roofing & Building"
+  description="House extensions in Leeds built by a roofing-led contractor: structure, tie-in and roof handled by one team, with the junction to the existing house done properly."
+>
+  <HeroText
+    kicker="Construction / Leeds"
+    heading="House extensions"
+    lede="The hardest part of an extension is not the new walls. It is where new meets old: the structural tie-in, the roof junction, the flashings and the damp detailing. We build extensions from the trade that gets those details right."
+  />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs
+      items={[
+        { label: 'Home', href: '/' },
+        { label: 'Construction', href: '/construction/' },
+        { label: 'Extensions' },
+      ]}
+    />
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap prose">
+      <h2>What we take on</h2>
+      <p>
+        Single and two-storey extensions, garage conversions with new roofs over, and
+        the structural carpentry that goes with them: joists, roof structures, dormers
+        and openings. Where a project needs trades we do not carry ourselves, we work
+        with people we know and stand behind the whole job.
+      </p>
+      <h2>Why a roofing-led builder</h2>
+      <p>
+        Most extension problems that show up two winters later are roof and weathering
+        problems: a valley that ponds, an abutment flashed with sealant instead of lead,
+        a flat junction that should have been pitched. Those are the details we do every
+        day. Building the extension underneath them means nobody has to hand the
+        critical part to somebody else.
+      </p>
+      <h2>How it runs</h2>
+      <p>
+        We price from your drawings or measure up with you, agree a written scope and
+        programme, and keep the site tidy and the neighbours on side while we work. You
+        deal with the same people from first visit to handover.
+      </p>
+    </div>
+  </section>
+
+  <EvidenceGallery categories={['extensions', 'dormers']} heading="Extension work" />
+
+  <CtaBand
+    title="Extending your home?"
+    note="Send us the drawings if you have them, or just describe what you want to do."
+  />
+</Base>

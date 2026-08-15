@@ -1,0 +1,265 @@
+[
+  {
+    "slug": "extension-tiled-roof-lead-apron",
+    "original": "500425617_2708167992715396_861416836390490065_n.jpg",
+    "alt": "Charcoal double roman tiles and new lead apron flashing over an extension, with timber studwork and blockwork visible in the opening below",
+    "orientation": "portrait",
+    "role": "grid",
+    "categories": ["extensions", "tiling"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "tiling-in-progress-battens-lead-abutment",
+    "original": "500456874_2708167989382063_3561413592994668994_n.jpg",
+    "alt": "Interlocking concrete tiles being laid over new battens and membrane, with a neat lead abutment dressed against red brickwork",
+    "orientation": "portrait",
+    "role": "detail",
+    "categories": ["tiling"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "grey-tile-roof-velux-lead-flashing",
+    "original": "500670490_2708168349382027_3832310307631360393_n.jpg",
+    "alt": "Completed grey tiled roof with a newly fitted Velux window and lead flashing dressed to the main house wall",
+    "orientation": "portrait",
+    "role": "grid",
+    "categories": ["tiling", "velux"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "extension-roof-joists-structural-timber",
+    "original": "500825077_2708168229382039_1012852856508715833_n.jpg",
+    "alt": "New treated timber joists spanning an extension in low sunlight, bedded on red brick walls with a concrete lintel",
+    "orientation": "portrait",
+    "role": "grid",
+    "categories": ["extensions"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "buff-tile-roof-velux-parapet-lead",
+    "original": "501313744_2708168232715372_2851331116513972580_n.jpg",
+    "alt": "Buff double roman tiled roof with a grey Velux window, white fascia and lead parapet flashing under a blue sky",
+    "orientation": "portrait",
+    "role": "grid",
+    "categories": ["tiling", "velux"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "dormer-construction-membrane-battens",
+    "original": "501608254_2708168136048715_3490747763429388246_n.jpg",
+    "alt": "Dormer under construction with cheeks wrapped in breathable membrane and battens, above an existing slate roof",
+    "orientation": "portrait",
+    "role": "grid",
+    "categories": ["dormers"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "new-slate-roof-conservation-rooflights",
+    "original": "501966644_2708168282715367_4611610691351775056_n.jpg",
+    "alt": "Natural blue-grey slate being laid across a stone-built house, with two conservation rooflights fitted and battens exposed above",
+    "orientation": "portrait",
+    "role": "grid",
+    "categories": ["slating", "velux"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "clay-plain-tile-roof-lead-flashing",
+    "original": "WhatsApp Image 2026-08-13 at 12.04.27.jpeg",
+    "alt": "Weathered clay plain tiles relaid on a small pitched roof with black flashing details and a lead slate around the flue",
+    "orientation": "landscape",
+    "role": "grid",
+    "categories": ["tiling"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "bungalow-reroof-anthracite-tiles",
+    "original": "WhatsApp Image 2026-08-13 at 12.04.57.jpeg",
+    "alt": "Full front elevation of a detached bungalow with newly laid anthracite tiles across three hipped roofs, scaffold still in place",
+    "orientation": "landscape",
+    "role": "hero",
+    "categories": ["re-roofing", "tiling"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "stone-chalet-reroof-pantiles-velux",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.13.jpeg",
+    "alt": "Stone chalet bungalow mid re-roof with new pantiles, Velux windows and scaffold to the gable under a blue sky",
+    "orientation": "landscape",
+    "role": "grid",
+    "categories": ["re-roofing", "velux"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "reroof-membrane-battens-chimney-lead",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.40 (1).jpeg",
+    "alt": "Full hipped roof slope covered in red breathable membrane with new battens, and a brick chimney stack finished with fresh lead flashing",
+    "orientation": "landscape",
+    "role": "hero",
+    "categories": ["re-roofing", "membrane-detail"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "reroof-membrane-battens-open-ridge",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.40.jpeg",
+    "alt": "Re-roof in progress with red breathable membrane and new battens laid up to an open ridge, suburban rooftops beyond",
+    "orientation": "landscape",
+    "role": "hero",
+    "categories": ["re-roofing", "membrane-detail"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "roof-stripped-chimney-lead-soakers",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.42 (1).jpeg",
+    "alt": "Hipped roof stripped back to rafters with a brick chimney prepared with new lead soakers, neighbouring pantile roofs beyond",
+    "orientation": "landscape",
+    "role": "grid",
+    "categories": ["re-roofing"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "commercial-development-scaffold-team",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.42 (2).jpeg",
+    "alt": "Two operatives in hi-vis on a scaffold platform high on a multi-storey residential development with brick and standing-seam cladding",
+    "orientation": "landscape",
+    "role": "grid",
+    "categories": ["commercial"],
+    "peopleVisible": true,
+    "consentObtained": true
+  },
+  {
+    "slug": "heritage-steep-slate-hip-lead-roll",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.42 (3).jpeg",
+    "alt": "Steeply pitched heritage roof in weathered stone slate, one slope stripped to membrane with setting-out lines and a lead hip roll",
+    "orientation": "landscape",
+    "role": "grid",
+    "categories": ["heritage-slating", "slating"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "heritage-stone-slate-reroof-city-skyline",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.42 (4).jpeg",
+    "alt": "Reclaimed stone slates being relaid over red membrane on a large heritage roof, with the city skyline and a tower crane beyond",
+    "orientation": "landscape",
+    "role": "hero",
+    "categories": ["heritage-slating", "commercial"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "heritage-building-full-scaffold-spire",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.42 (5).jpeg",
+    "alt": "Large Victorian stone building wrapped in multi-lift scaffold to its spire, seen against a broad grey sky",
+    "orientation": "landscape",
+    "role": "grid",
+    "categories": ["heritage-slating", "commercial"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "stone-slate-coursing-texture",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.42 (6).jpeg",
+    "alt": "Close texture of heavy random stone slates hung in diminishing courses over red membrane",
+    "orientation": "landscape",
+    "role": "detail",
+    "categories": ["heritage-slating"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "stone-slate-reslate-half-laid",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.42 (7).jpeg",
+    "alt": "Heritage roof slope part way through re-slating, old stone slates on one side and new battens with slates being laid on the other",
+    "orientation": "landscape",
+    "role": "grid",
+    "categories": ["heritage-slating", "slating"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "heritage-scaffold-gothic-finial",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.42 (8).jpeg",
+    "alt": "Scaffold lifts rising against a stone slate roof with a carved Gothic finial at the ridge",
+    "orientation": "landscape",
+    "role": "detail",
+    "categories": ["heritage-slating", "commercial"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "roof-stripped-to-rafters",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.42.jpeg",
+    "alt": "Roof stripped back to bare rafters and old laths during a full re-roof, with scaffold edge protection in place",
+    "orientation": "landscape",
+    "role": "grid",
+    "categories": ["re-roofing"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "stone-slate-steep-pitch-blue-sky",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.43 (2).jpeg",
+    "alt": "Steep weathered stone slate roof with roof ladders in place under a deep blue sky",
+    "orientation": "landscape",
+    "role": "grid",
+    "categories": ["heritage-slating", "slating"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "operative-ladder-church-finial",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.43 (3).jpeg",
+    "alt": "Operative in hi-vis climbing a fibreglass ladder on scaffold beside a stone slate church roof with a Gothic finial",
+    "orientation": "landscape",
+    "role": "grid",
+    "categories": ["heritage-slating", "commercial"],
+    "peopleVisible": true,
+    "consentObtained": true
+  },
+  {
+    "slug": "roof-valleys-battened-membrane",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.43 (4).jpeg",
+    "alt": "Roof valleys fully battened over red membrane in hard sunlight, with a lead-lined valley gutter and stone parapet",
+    "orientation": "landscape",
+    "role": "detail",
+    "categories": ["heritage-slating", "membrane-detail"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "heritage-scaffold-run-ridge-stones",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.43.jpeg",
+    "alt": "High-level scaffold run with stacked stone ridge pieces and a battened membrane slope, rooftops in the distance",
+    "orientation": "landscape",
+    "role": "detail",
+    "categories": ["heritage-slating"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "oak-framed-garden-building-stone-slate-roof",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.56 (1).jpeg",
+    "alt": "Completed oak framed garden building with a reclaimed stone slate hipped roof and slatted timber sides under a blue sky",
+    "orientation": "landscape",
+    "role": "hero",
+    "categories": ["garden-buildings", "slating"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "oak-framed-garden-building-roof-deck",
+    "original": "WhatsApp Image 2026-08-13 at 12.05.56.jpeg",
+    "alt": "Green oak frame of a garden building with roof deck boards being laid over the rafters, ladders in place",
+    "orientation": "landscape",
+    "role": "grid",
+    "categories": ["garden-buildings", "extensions"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "stone-country-house-slate-roof",
+    "original": "WhatsApp Image 2026-08-13 at 12.06.13.jpeg",
+    "alt": "Large detached Yorkshire stone country house with a grey slate roof, stone chimneys, conservation rooflights and new garden walling",
+    "orientation": "landscape",
+    "role": "grid",
+    "categories": ["slating", "commercial"],
+    "peopleVisible": false
+  },
+  {
+    "slug": "city-centre-commercial-access-work",
+    "original": "WhatsApp Image 2026-08-13 at 12.06.34.jpeg",
+    "alt": "Operative working from a powered access platform at eaves level on a Victorian red brick commercial building",
+    "orientation": "landscape",
+    "role": "detail",
+    "categories": ["commercial"],
+    "peopleVisible": true
+  }
+]

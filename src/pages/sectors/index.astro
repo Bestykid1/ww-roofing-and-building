@@ -1,0 +1,127 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import HeroText from '../../components/hero/HeroText.astro';
+import Photo from '../../components/media/Photo.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+
+const sectors = [
+  {
+    href: '/sectors/residential/',
+    title: 'Homeowners & residential',
+    text: 'Roof repairs, re-roofs and improvements for houses across Leeds, with clear prices and a tidy site.',
+    photoSlug: 'bungalow-reroof-anthracite-tiles',
+    photoVariant: 'hero',
+  },
+  {
+    href: '/sectors/commercial/',
+    title: 'Commercial & heritage',
+    text: 'Larger roofs, occupied buildings and heritage coverings, planned around access, safety and disruption.',
+    photoSlug: 'heritage-building-full-scaffold-spire',
+  },
+  {
+    href: '/sectors/construction-partners/',
+    title: 'Construction partners',
+    text: 'A roofing subcontractor that prices from drawings, works to programme and hands over without snags.',
+    photoSlug: 'heritage-stone-slate-reroof-city-skyline',
+    photoVariant: 'hero',
+  },
+];
+---
+
+<Base
+  title="Who We Work With | WW Roofing & Building Leeds"
+  description="WW Roofing & Building works with homeowners, commercial and heritage clients, and main contractors who need a reliable roofing subcontractor in Leeds."
+>
+  <HeroText
+    kicker="Who we work with"
+    heading="Three kinds of client, one standard of work"
+    lede="A homeowner with a leak, a property manager with a portfolio and a site manager with a programme all need different things from a roofing contractor. The workmanship is the same; the way we work around you changes."
+  />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Who we work with' }]} />
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap sector-rows">
+      {sectors.map((s) => (
+        <a class="sector-row" href={s.href}>
+          <div class="sr-media">
+            <Photo
+              slug={s.photoSlug}
+              variant={s.photoVariant}
+              role="grid"
+              sizes="(max-width: 800px) 100vw, 380px"
+              altOverride=""
+            />
+          </div>
+          <div class="sr-copy">
+            <h2>{s.title}</h2>
+            <p>{s.text}</p>
+            <span class="sr-more" aria-hidden="true">Read more &rarr;</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
+
+<style>
+  .sector-rows {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sector-row {
+    display: grid;
+    grid-template-columns: minmax(220px, 380px) 1fr;
+    gap: var(--space-5);
+    align-items: center;
+    padding-block: var(--space-4);
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .sector-row:first-child {
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .sr-media :global(img) {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .sr-copy p {
+    color: var(--ink-soft);
+    margin-block-start: var(--space-2);
+    max-width: 50ch;
+  }
+
+  .sr-more {
+    display: inline-block;
+    margin-block-start: var(--space-3);
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .sector-row:hover h2,
+  .sector-row:hover .sr-more {
+    color: var(--accent);
+  }
+
+  @media (max-width: 800px) {
+    .sector-row {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+  }
+</style>

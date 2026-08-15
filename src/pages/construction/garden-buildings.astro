@@ -1,0 +1,90 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import HeroFull from '../../components/hero/HeroFull.astro';
+import Photo from '../../components/media/Photo.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+---
+
+<Base
+  title="Oak Framed Garden Buildings Yorkshire | WW Roofing"
+  description="Oak-framed garden buildings, outdoor kitchens and car ports in Yorkshire, built in green oak and roofed in real slate or tile by WW Roofing & Building."
+>
+  <HeroFull
+    photoSlug="oak-framed-garden-building-stone-slate-roof"
+    photoVariant="hero"
+    kicker="Construction"
+    heading="Oak-framed garden buildings"
+    lede="Garden rooms, outdoor kitchens and car ports framed in green oak and roofed in reclaimed stone slate or tile. Small buildings, built like real ones."
+    objectPosition="center 75%"
+    secondaryHref="/projects/oak-framed-garden-building/"
+    secondaryLabel="See one being built"
+  />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs
+      items={[
+        { label: 'Home', href: '/' },
+        { label: 'Construction', href: '/construction/' },
+        { label: 'Garden buildings' },
+      ]}
+    />
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap gb-layout">
+      <div class="prose">
+        <h2>Why oak and slate</h2>
+        <p>
+          Most garden structures are softwood and roofing felt, and they look tired in
+          five years. Green oak stiffens and silvers as it ages, and a properly battened
+          slate or tile roof over it will outlast every shed on the street. The
+          difference in cost is real; so is the difference in what you end up with.
+        </p>
+        <h2>From frame to finished roof</h2>
+        <p>
+          We build the frame, deck it, and roof it with the same care as a house:
+          breathable membrane, battens set to gauge, and coverings dressed with proper
+          edge details rather than mastic. The two photographs on this page are the
+          same build: the roof deck going on, and the finished building.
+        </p>
+      </div>
+      <figure class="gb-before">
+        <Photo
+          slug="oak-framed-garden-building-roof-deck"
+          variant="clean"
+          role="grid"
+          sizes="(max-width: 800px) 100vw, 40vw"
+        />
+        <figcaption>The same building with the roof deck going on</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Thinking about a garden building?"
+    note="Tell us what you want it for and where it will stand, and we will sketch out an approach and a price."
+  />
+</Base>
+
+<style>
+  .gb-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(260px, 5fr);
+    gap: var(--space-6);
+    align-items: start;
+  }
+
+  .gb-before figcaption {
+    font-size: var(--text-xs);
+    color: var(--ink-soft);
+    padding-block-start: 0.5rem;
+  }
+
+  @media (max-width: 800px) {
+    .gb-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+</style>

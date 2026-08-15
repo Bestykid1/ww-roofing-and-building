@@ -1,0 +1,127 @@
+---
+import { business } from '../../lib/business';
+import Photo from '../media/Photo.astro';
+
+interface Props {
+  photoSlug: string;
+  photoVariant?: string;
+  kicker: string;
+  heading: string;
+  lede: string;
+  /** Caption fact rendered on the ledger strip, e.g. what the photo shows. */
+  caption: string;
+}
+
+const { photoSlug, photoVariant, kicker, heading, lede, caption } = Astro.props;
+---
+
+<section class="hero-ledger">
+  <div class="wrap-wide ledger-grid">
+    <header class="ledger-head">
+      <p class="kicker">{kicker}</p>
+      <h1>{heading}</h1>
+    </header>
+    <div class="ledger-side">
+      <p class="hero-lede">{lede}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact/">Request a quote</a>
+        <a class="phone-link" href={business.phoneHref}>{business.phone}</a>
+      </div>
+    </div>
+  </div>
+  <figure class="ledger-media">
+    <Photo
+      slug={photoSlug}
+      variant={photoVariant}
+      role="hero"
+      sizes="100vw"
+      loading="eager"
+      class="hero-img"
+    />
+    <figcaption class="on-dark">
+      <span>{caption}</span>
+      <a href="/projects/">View our work</a>
+    </figcaption>
+  </figure>
+</section>
+
+<style>
+  .hero-ledger {
+    padding-block-start: var(--space-6);
+  }
+
+  .ledger-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--space-5);
+    align-items: end;
+    padding-block-end: var(--space-5);
+  }
+
+  .ledger-head h1 {
+    font-size: var(--text-hero);
+    max-width: 14ch;
+  }
+
+  .hero-lede {
+    font-size: var(--text-l);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 40ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-block-start: var(--space-4);
+  }
+
+  .ledger-media {
+    position: relative;
+  }
+
+  .ledger-media :global(img) {
+    width: 100%;
+    max-height: min(72vh, 660px);
+    object-fit: cover;
+    object-position: center 55%;
+  }
+
+  .ledger-media figcaption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    background: var(--surface-slate);
+    color: var(--ink-on-dark-soft);
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem var(--gutter);
+  }
+
+  .ledger-media figcaption a {
+    color: var(--ink-on-dark);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent-bright);
+    padding-bottom: 2px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 900px) {
+    .ledger-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+
+    .ledger-media figcaption {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+</style>

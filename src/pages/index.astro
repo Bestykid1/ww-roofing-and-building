@@ -1,0 +1,203 @@
+---
+import Base from '../layouts/Base.astro';
+import SchemaLocalBusiness from '../components/seo/SchemaLocalBusiness.astro';
+import HeroSplit from '../components/hero/HeroSplit.astro';
+import ServiceIndex from '../components/sections/ServiceIndex.astro';
+import SplitFeature from '../components/sections/SplitFeature.astro';
+import ProjectStrip from '../components/sections/ProjectStrip.astro';
+import CtaBand from '../components/sections/CtaBand.astro';
+import { areasServed, business } from '../lib/business';
+
+const serviceRows = [
+  {
+    title: 'Re-roofing',
+    href: '/services/re-roofing/',
+    scope: 'Full strip and re-cover: new membrane, battens and coverings on sound timbers.',
+    photoSlug: 'reroof-membrane-battens-open-ridge',
+  },
+  {
+    title: 'Slating',
+    href: '/services/slating/',
+    scope: 'Natural slate and reclaimed stone slate, from terraced streets to heritage roofs.',
+    photoSlug: 'new-slate-roof-conservation-rooflights',
+  },
+  {
+    title: 'Tiling',
+    href: '/services/tiling/',
+    scope: 'Concrete and clay tiling laid straight, flashed properly and finished tidily.',
+    photoSlug: 'tiling-in-progress-battens-lead-abutment',
+  },
+  {
+    title: 'Roof repairs',
+    href: '/services/roof-repairs/',
+    scope: 'Honest diagnosis first: repair where a repair is right, replacement where it is not.',
+  },
+  {
+    title: 'Velux & roof windows',
+    href: '/services/velux-roof-windows/',
+    scope: 'Roof windows and conservation rooflights fitted and weathered into any covering.',
+    photoSlug: 'grey-tile-roof-velux-lead-flashing',
+    photoVariant: 'detail',
+  },
+  {
+    title: 'Leadwork & roofline',
+    href: '/services/leadwork-and-roofline/',
+    scope: 'Flashings, valleys and chimneys dressed in lead; fascias, soffits and guttering.',
+  },
+];
+---
+
+<Base
+  title="WW Roofing & Building | Roofing Contractors in Leeds"
+  description="Roofing and building contractors in Leeds. Roof repairs, re-roofing, slating, tiling, Velux windows, extensions and new builds across Leeds and surrounding areas."
+>
+  <SchemaLocalBusiness slot="head" />
+  <HeroSplit
+    photoSlug="reroof-membrane-battens-chimney-lead"
+    kicker="Roofing & building contractors, Leeds"
+    heading="Roofing and building, done properly."
+    lede="Roof repairs, full re-roofs, slating and tiling, through to extensions and new builds. Straightforward advice and quality workmanship across Leeds and the surrounding areas."
+  />
+
+  <ServiceIndex
+    rows={serviceRows}
+    intro="Every roof gets the same approach: assess it honestly, price it clearly, build it properly and leave the site tidy."
+  />
+
+  <SplitFeature
+    kicker="Construction"
+    heading="More than the roof"
+    photoSlug="extension-roof-joists-structural-timber"
+    mediaSide="left"
+    ratio="even"
+    ctaHref="/construction/"
+    ctaLabel="Extensions & new builds"
+    photoCaption="Structural timbers on a house extension"
+  >
+    <p>
+      WW is a roofing-led building business. Where a project goes beyond the roofline, we
+      take on the wider construction work: house extensions, new-build roofing and
+      structural carpentry, and oak-framed garden buildings, delivered by the same team
+      to the same standard.
+    </p>
+    <p>
+      One contractor from footings to ridge means fewer handovers, clearer
+      responsibility and a programme that holds together.
+    </p>
+  </SplitFeature>
+
+  <ProjectStrip
+    items={[
+      {
+        href: '/projects/',
+        title: 'Heritage stone slate re-roof',
+        meta: 'Slating',
+        photoSlug: 'heritage-stone-slate-reroof-city-skyline',
+        photoVariant: 'hero',
+        lead: true,
+      },
+      {
+        href: '/projects/',
+        title: 'Bungalow re-roof in anthracite tile',
+        meta: 'Re-roofing',
+        photoSlug: 'bungalow-reroof-anthracite-tiles',
+        photoVariant: 'hero',
+      },
+      {
+        href: '/projects/',
+        title: 'Oak-framed garden building',
+        meta: 'Construction',
+        photoSlug: 'oak-framed-garden-building-stone-slate-roof',
+        photoVariant: 'hero',
+      },
+    ]}
+  />
+
+  <SplitFeature
+    kicker="Who we work with"
+    heading="A roofing partner main contractors can rely on"
+    photoSlug="heritage-building-full-scaffold-spire"
+    dark
+    ctaHref="/sectors/construction-partners/"
+    ctaLabel="Discuss a subcontract package"
+    photoCaption="Multi-lift scaffold on a heritage restoration"
+  >
+    <p>
+      Alongside homeowners and commercial clients, WW works as a roofing subcontractor
+      for builders, developers and main contractors: pricing from drawings, working to
+      programme, coordinating with other trades and handing over a roof that passes
+      inspection first time.
+    </p>
+  </SplitFeature>
+
+  <section class="section areas-band">
+    <div class="wrap areas-grid">
+      <div>
+        <p class="kicker">Areas we cover</p>
+        <h2>Leeds and the surrounding areas</h2>
+        <p class="areas-copy">
+          We are based in {business.baseLocality} and work across the city and the towns
+          and villages around it. If you are nearby but not listed, ask; the answer is
+          usually yes.
+        </p>
+        <p class="areas-cta">
+          <a class="btn btn-outline" href="/areas/">Where we work</a>
+        </p>
+      </div>
+      <ul class="areas-list">
+        {areasServed.map((area) => (
+          <li>{area}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
+
+<style>
+  .areas-band {
+    background: var(--surface-stone);
+  }
+
+  .areas-grid {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  .areas-copy {
+    color: var(--ink-soft);
+    margin-block-start: var(--space-3);
+    max-width: 44ch;
+  }
+
+  .areas-cta {
+    margin-block-start: var(--space-4);
+  }
+
+  .areas-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.4rem var(--space-4);
+    font-family: var(--font-display);
+    font-size: var(--text-s);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .areas-list li {
+    border-bottom: 1px solid var(--line-strong);
+    padding-block: 0.45rem;
+  }
+
+  @media (max-width: 900px) {
+    .areas-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+</style>

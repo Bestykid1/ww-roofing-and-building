@@ -1,0 +1,198 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import HeroFull from '../../components/hero/HeroFull.astro';
+import HeroSplit from '../../components/hero/HeroSplit.astro';
+import HeroText from '../../components/hero/HeroText.astro';
+import EvidenceGallery from '../../components/sections/EvidenceGallery.astro';
+import Photo from '../../components/media/Photo.astro';
+import FaqBlock from '../../components/sections/FaqBlock.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+import SchemaService from '../../components/seo/SchemaService.astro';
+import { business } from '../../lib/business';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((service) => ({ params: { slug: service.id }, props: { service } }));
+}
+
+const { service } = Astro.props;
+const { Content } = await render(service);
+const data = service.data;
+
+const related = await Promise.all(
+  data.relatedServices.map((ref) => getEntry('services', ref.id)),
+);
+
+const heroPhotoSlug = data.heroPhoto?.id;
+const kicker = `Roofing services / Leeds`;
+---
+
+<Base title={data.metaTitle} description={data.metaDescription}>
+  <SchemaService slot="head" name={data.title} description={data.metaDescription} />
+  {data.heroVariant === 'full' && heroPhotoSlug && (
+    <HeroFull
+      photoSlug={heroPhotoSlug}
+      photoVariant="hero"
+      kicker={kicker}
+      heading={data.title}
+      lede={data.intro}
+      secondaryHref="/projects/"
+      secondaryLabel="See this work"
+    />
+  )}
+  {data.heroVariant === 'split' && heroPhotoSlug && (
+    <HeroSplit
+      photoSlug={heroPhotoSlug}
+      kicker={kicker}
+      heading={data.title}
+      lede={data.intro}
+    />
+  )}
+  {(data.heroVariant === 'text' || !heroPhotoSlug) && data.heroVariant !== 'full' && data.heroVariant !== 'split' && (
+    <HeroText kicker={kicker} heading={data.title} lede={data.intro} />
+  )}
+
+  <div class="wrap service-crumbs">
+    <Breadcrumbs
+      items={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services/' },
+        { label: data.title },
+      ]}
+    />
+  </div>
+
+  <article class="wrap service-body">
+    <div>
+      <div class="prose">
+        <Content />
+      </div>
+      {data.detailPhotos.length > 0 && (
+        <div class="service-details">
+          {data.detailPhotos.map((ref) => (
+            <figure>
+              <Photo slug={ref.id} role="grid" sizes="(max-width: 900px) 100vw, 34vw" />
+            </figure>
+          ))}
+        </div>
+      )}
+    </div>
+    <aside class="service-aside">
+      <div class="aside-block">
+        <h2>Where we do this</h2>
+        <p>
+          Across {business.serviceAreaSummary}: see the
+          <a href="/areas/">areas we cover</a>.
+        </p>
+      </div>
+      {related.filter(Boolean).length > 0 && (
+        <div class="aside-block">
+          <h2>Related services</h2>
+          <ul>
+            {related.filter(Boolean).map((rel) => (
+              <li><a href={`/services/${rel!.id}/`}>{rel!.data.title}</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <div class="aside-block aside-contact">
+        <h2>Talk it through</h2>
+        <p>
+          <a class="phone-link" href={business.phoneHref}>{business.phone}</a>
+        </p>
+        <p><a class="btn btn-primary" href="/contact/">Request a quote</a></p>
+      </div>
+    </aside>
+  </article>
+
+  {data.evidenceLevel === 'photographic' && data.galleryCategories.length > 0 && (
+    <EvidenceGallery
+      categories={data.galleryCategories}
+      excludeSlugs={heroPhotoSlug ? [heroPhotoSlug] : []}
+    />
+  )}
+
+  <FaqBlock faqs={data.faqs} schema={data.faqs.length >= 3} />
+
+  <CtaBand
+    title={`Need ${data.title.toLowerCase()} in Leeds?`}
+    note="Send us a few details and a photo if you have one, and we will come back with an honest assessment."
+  />
+</Base>
+
+<style>
+  .service-crumbs {
+    padding-block: var(--space-4) 0;
+  }
+
+  .service-body {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(240px, 3fr);
+    gap: var(--space-6);
+    padding-block: var(--space-5) var(--space-section);
+  }
+
+  .service-body :global(h2) {
+    font-size: var(--text-xl);
+  }
+
+  .service-aside {
+    position: sticky;
+    top: var(--space-4);
+    align-self: start;
+  }
+
+  .service-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    margin-block-start: var(--space-5);
+  }
+
+  .service-details figure :global(img) {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .service-details figure figcaption {
+    font-size: var(--text-xs);
+    color: var(--ink-soft);
+    padding-block-start: 0.5rem;
+  }
+
+  .aside-block {
+    border-top: 2px solid var(--surface-slate);
+    padding-block: var(--space-3) var(--space-4);
+  }
+
+  .aside-block h2 {
+    font-size: var(--text-xs);
+    font-family: var(--font-display);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-block-end: var(--space-2);
+  }
+
+  .aside-block ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .aside-contact p + p {
+    margin-block-start: var(--space-3);
+  }
+
+  @media (max-width: 900px) {
+    .service-body {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+</style>

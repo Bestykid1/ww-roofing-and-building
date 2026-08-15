@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+import HeroText from '../components/hero/HeroText.astro';
+import { business } from '../lib/business';
+---
+
+<Base
+  title="Privacy Policy | WW Roofing & Building"
+  description="How WW Roofing & Building handles the personal information you share when you contact us: what we collect, why, and how long we keep it."
+  noindex
+  hideContactBar
+>
+  <HeroText kicker="Legal" heading="Privacy policy" />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Privacy' }]} />
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap prose">
+      <p>
+        This policy explains how {business.name} ("we") handles personal information
+        collected through this website.
+      </p>
+      <h2>What we collect and why</h2>
+      <p>
+        When you send an enquiry we collect your name, phone number, email address and
+        the details you give about your property or project. We use this solely to
+        respond to your enquiry, provide quotations and carry out work you instruct.
+        We do not sell or share your details for marketing.
+      </p>
+      <h2>How enquiries are processed</h2>
+      <p>
+        Enquiry forms on this site are processed by our website hosting provider
+        (Netlify) and forwarded to us by email. Their processing is governed by their
+        own privacy terms.
+      </p>
+      <h2>How long we keep information</h2>
+      <p>
+        Enquiry details are kept for as long as needed to deal with the enquiry and any
+        resulting work, and for reasonable record-keeping afterwards. [RETENTION PERIOD
+        TO BE CONFIRMED].
+      </p>
+      <h2>Cookies and analytics</h2>
+      <p>
+        This website does not set marketing or tracking cookies. [CONFIRM IF ANALYTICS
+        ADDED AT LAUNCH].
+      </p>
+      <h2>Your rights</h2>
+      <p>
+        You can ask us at any time what information we hold about you, ask for it to be
+        corrected, or ask for it to be deleted, by contacting
+        <a href={business.emailHref}>{business.email}</a>.
+      </p>
+      <h2>Who we are</h2>
+      <p>
+        {business.name}, {business.baseLocality}. [LEGAL ENTITY NAME AND CONTACT
+        ADDRESS TO BE CONFIRMED].
+      </p>
+    </div>
+  </section>
+</Base>

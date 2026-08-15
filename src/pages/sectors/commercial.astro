@@ -1,0 +1,76 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import HeroSplit from '../../components/hero/HeroSplit.astro';
+import EvidenceGallery from '../../components/sections/EvidenceGallery.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+---
+
+<Base
+  title="Commercial Roofing Contractor Leeds | WW Roofing"
+  description="Commercial and heritage roofing in Leeds: occupied buildings, landlord portfolios and traditional coverings, planned around access, safety and disruption."
+>
+  <HeroSplit
+    photoSlug="heritage-building-full-scaffold-spire"
+    kicker="For commercial & heritage clients"
+    heading="Bigger roofs, managed properly"
+    lede="Commercial roofing is a planning job before it is a roofing job: access, safety, occupants and weather windows. We manage all four, then do the roofing to the same standard as everything else we touch."
+    primaryHref="/contact/"
+    primaryLabel="Discuss your building"
+    secondaryHref="/projects/heritage-stone-slate-reroof/"
+    secondaryLabel="See a heritage project"
+  />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs
+      items={[
+        { label: 'Home', href: '/' },
+        { label: 'Who we work with', href: '/sectors/' },
+        { label: 'Commercial & heritage' },
+      ]}
+    />
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap prose">
+      <h2>Who this is for</h2>
+      <p>
+        Businesses with premises to keep watertight, landlords and property managers
+        with portfolios to look after, and organisations responsible for older
+        buildings: churches, institutional buildings and listed-type properties where
+        the covering is part of the building's character.
+      </p>
+      <h2>Occupied buildings</h2>
+      <p>
+        Most commercial roofing happens above people trying to work, trade or worship.
+        We plan around that: access agreed in advance, safe zones maintained, noisy
+        work timed with you, and the building weathertight every night, not just at the
+        end.
+      </p>
+      <h2>Heritage coverings</h2>
+      <p>
+        Reclaimed stone slate laid in diminishing courses, natural slate, clay tile and
+        the leadwork that goes with them. Traditional detailing done the traditional
+        way, documented photographically as it goes on, because on a heritage roof the
+        covered-up work is the job.
+      </p>
+      <h2>Access without scaffold</h2>
+      <p>
+        For inspections and smaller high-level repairs, powered access can beat a full
+        scaffold on cost and disruption. We use both and will recommend whichever suits
+        the task, not whichever is easiest to sell.
+      </p>
+    </div>
+  </section>
+
+  <EvidenceGallery
+    categories={['commercial', 'heritage-slating']}
+    heading="Commercial and heritage work"
+    excludeSlugs={['heritage-building-full-scaffold-spire']}
+  />
+
+  <CtaBand
+    title="Responsible for a building?"
+    note="Tell us about the roof and we will arrange to look at it, with a report you can act on."
+  />
+</Base>

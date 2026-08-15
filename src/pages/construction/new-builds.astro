@@ -1,0 +1,58 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import HeroText from '../../components/hero/HeroText.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+---
+
+<Base
+  title="New Build Roofing Contractor Leeds | WW Roofing"
+  description="New-build roofing in Leeds and Yorkshire: membrane, battens, coverings and leadwork to specification and programme, for self-builders and site developers."
+>
+  <HeroText
+    kicker="Construction / Leeds"
+    heading="New-build roofing"
+    lede="From single self-build plots to development sites, we deliver the roofing package: set out and covered to specification, weathered in properly, and finished when the programme says it will be."
+  />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs
+      items={[
+        { label: 'Home', href: '/' },
+        { label: 'Construction', href: '/construction/' },
+        { label: 'New builds' },
+      ]}
+    />
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap prose">
+      <h2>For self-builders</h2>
+      <p>
+        If you are building your own house, the roof is the milestone that makes
+        everything else possible: once it is watertight, the trades inside can start. We
+        work from your architect's drawings, advise on coverings and details where the
+        specification leaves room, and get you weathertight without drama.
+      </p>
+      <h2>For sites and developers</h2>
+      <p>
+        On multi-plot sites we price per plot or per package, keep to the build
+        sequence, and coordinate with your site management on access, lifting and
+        inspections. If you are a main contractor looking for a roofing subcontractor,
+        the <a href="/sectors/construction-partners/">construction partners page</a>
+        covers how we work in more detail.
+      </p>
+      <h2>Straight answers</h2>
+      <p>
+        New-build roofing is specification-led, so we quote against the drawings and
+        say clearly what is included and what is provisional. If a detail on the
+        drawings will not work on the roof, we say so before it is built, not after.
+      </p>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Pricing a new build?"
+    note="Send the roof drawings and specification and we will come back with a clear package price."
+  />
+</Base>

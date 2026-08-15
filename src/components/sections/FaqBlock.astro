@@ -1,0 +1,89 @@
+---
+interface Faq {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  faqs: Faq[];
+  heading?: string;
+  /** Emit FAQPage JSON-LD. Only set true where the FAQs are the substantive
+      content of the section and the markup is semantically appropriate. */
+  schema?: boolean;
+}
+
+const { faqs, heading = 'Questions we are often asked', schema = false } = Astro.props;
+
+const jsonLd = schema
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    }
+  : null;
+---
+
+{faqs.length > 0 && (
+  <section class="faq-block section-tight">
+    <div class="wrap faq-grid">
+      <h2>{heading}</h2>
+      <div class="faq-list">
+        {faqs.map((faq) => (
+          <details class="faq-item">
+            <summary>{faq.q}</summary>
+            <p>{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </section>
+)}
+
+<style>
+  .faq-grid {
+    display: grid;
+    grid-template-columns: minmax(200px, 4fr) 8fr;
+    gap: var(--space-5);
+    align-items: start;
+  }
+
+  .faq-grid h2 {
+    font-size: var(--text-xl);
+    max-width: 12ch;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .faq-item summary {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-m);
+    padding-block: var(--space-3);
+    cursor: pointer;
+    list-style-position: outside;
+  }
+
+  .faq-item summary:hover {
+    color: var(--accent);
+  }
+
+  .faq-item p {
+    padding-block-end: var(--space-3);
+    color: var(--ink-soft);
+    max-width: 62ch;
+  }
+
+  @media (max-width: 800px) {
+    .faq-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+  }
+</style>

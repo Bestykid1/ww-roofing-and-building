@@ -1,0 +1,59 @@
+---
+import { business } from '../../lib/business';
+
+interface Props {
+  title?: string;
+  note?: string;
+}
+
+const {
+  title = 'Discuss your project with us',
+  note = 'Tell us what the roof or building needs and we will come back to you with an honest assessment and a clear price.',
+} = Astro.props;
+---
+
+<section class="cta-band on-dark">
+  <div class="wrap cta-inner">
+    <div class="cta-copy">
+      <h2>{title}</h2>
+      <p>{note}</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="/contact/">Request a quote</a>
+      <a class="phone-link" href={business.phoneHref}>or call {business.phone}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-band {
+    background: var(--surface-slate);
+    color: var(--ink-on-dark);
+    padding-block: var(--space-6);
+  }
+
+  .cta-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  .cta-copy h2 {
+    font-size: var(--text-xl);
+  }
+
+  .cta-copy p {
+    margin-block-start: var(--space-2);
+    color: var(--ink-on-dark-soft);
+    max-width: 46ch;
+  }
+
+  .cta-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+</style>

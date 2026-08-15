@@ -1,0 +1,81 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import HeroLedger from '../../components/hero/HeroLedger.astro';
+import SplitFeature from '../../components/sections/SplitFeature.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+---
+
+<Base
+  title="Extensions & New Builds in Leeds | WW Roofing & Building"
+  description="Roofing-led construction across Leeds: house extensions, new-build roofing and oak-framed garden buildings, delivered by one team from structure to finished roof."
+>
+  <HeroLedger
+    photoSlug="oak-framed-garden-building-stone-slate-roof"
+    photoVariant="hero"
+    kicker="Construction"
+    heading="Built from the roof down"
+    lede="WW is a roofing-led building business. Where a project goes beyond the roofline we carry the construction work too: extensions, new-build roofing and oak-framed garden buildings, one team from structure to finished roof."
+    caption="Oak-framed garden building with reclaimed stone slate roof"
+  />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Construction' }]} />
+  </div>
+
+  <SplitFeature
+    kicker="Extensions"
+    heading="House extensions"
+    photoSlug="extension-roof-joists-structural-timber"
+    mediaSide="left"
+    ratio="even"
+    ctaHref="/construction/extensions/"
+    ctaLabel="About our extension work"
+    photoCaption="Treated structural timbers spanning a new extension"
+  >
+    <p>
+      An extension lives or dies at the junction with the existing house: the structure,
+      the tie-in, and above all the roof and its weathering details. That junction is
+      exactly where a roofing-led builder earns its keep.
+    </p>
+  </SplitFeature>
+
+  <SplitFeature
+    kicker="New builds"
+    heading="New-build roofing"
+    photoSlug="reroof-membrane-battens-open-ridge"
+    photoVariant="hero"
+    ratio="even"
+    ctaHref="/construction/new-builds/"
+    ctaLabel="New-build work"
+    photoCaption="Membrane and battens run to an open ridge"
+  >
+    <p>
+      On new-build sites we work as the roofing package: membrane, battens, coverings
+      and leadwork to specification and to programme, coordinated with the trades before
+      and after us.
+    </p>
+  </SplitFeature>
+
+  <SplitFeature
+    kicker="Garden buildings"
+    heading="Oak-framed garden buildings"
+    photoSlug="oak-framed-garden-building-roof-deck"
+    photoVariant="clean"
+    mediaSide="left"
+    ratio="even"
+    ctaHref="/construction/garden-buildings/"
+    ctaLabel="Garden buildings"
+    photoCaption="Green oak frame with the roof deck going on"
+  >
+    <p>
+      Outdoor kitchens, car ports and garden rooms in green oak, roofed properly in
+      slate or tile rather than felt. Small buildings, built like real ones.
+    </p>
+  </SplitFeature>
+
+  <CtaBand
+    title="Planning an extension or build?"
+    note="Talk to us early. The best time to get the roof right is before the walls are drawn."
+  />
+</Base>

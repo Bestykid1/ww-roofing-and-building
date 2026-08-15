@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+import HeroText from '../components/hero/HeroText.astro';
+import SplitFeature from '../components/sections/SplitFeature.astro';
+import CtaBand from '../components/sections/CtaBand.astro';
+---
+
+<Base
+  title="About WW Roofing & Building | Leeds"
+  description="WW Roofing & Building is a roofing and building contractor based in Crossgates, east Leeds, working on houses, commercial buildings and construction projects across the city."
+>
+  <HeroText
+    kicker="About WW"
+    heading="A roofing and building firm from east Leeds"
+    lede="WW Roofing & Building works from Crossgates, across Leeds and the towns around it. Roofing is the core of the business; building work grew out of doing the roof right and being asked what else we could take on."
+  />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
+  </div>
+
+  <section class="section-tight">
+    <div class="wrap prose">
+      <h2>How we work</h2>
+      <p>
+        Every job starts with looking properly. Roofs get condemned every day that need
+        three hours of repair, and roofs get patched every day that need replacing; the
+        difference is somebody bothering to look and being straight about what they see.
+        That is the reputation we are interested in.
+      </p>
+      <p>
+        Quotes are written, itemised and explained. Sites are kept tidy because a tidy
+        scaffold is a safe one and because it is your home or your business underneath
+        it. And the parts of the job that get covered up, the membrane, the battens, the
+        leadwork, get photographed as we go, so you can see what you paid for.
+      </p>
+      <h2>What we stand behind</h2>
+      <p>
+        The work on this site is our own, photographed by the people who did it. We
+        would rather show you a roof half-finished, with the setting-out lines still
+        visible, than a stock photograph of someone else's finished one. If you want to
+        judge us, judge us on <a href="/projects/">the work</a>.
+      </p>
+      <h2>Who you will deal with</h2>
+      <p>
+        The people who quote your job are the people who run it. Questions get answered
+        by someone who has stood on your roof, not a call centre. It is a simple way to
+        work and it is the reason most of our jobs arrive by word of mouth.
+      </p>
+    </div>
+  </section>
+
+  <SplitFeature
+    kicker="The evidence"
+    heading="Judge us on the work"
+    photoSlug="stone-slate-reslate-half-laid"
+    photoVariant="clean"
+    mediaSide="right"
+    ctaHref="/projects/"
+    ctaLabel="Browse our work"
+    photoCaption="Heritage slope part way through re-slating"
+  >
+    <p>
+      From full re-roofs on family homes to reclaimed stone slate on heritage
+      buildings, the projects archive shows how we leave a roof, and just as
+      importantly, what it looked like half way through.
+    </p>
+  </SplitFeature>
+
+  <CtaBand />
+</Base>

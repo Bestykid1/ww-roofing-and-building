@@ -1,0 +1,66 @@
+/*
+ * WW Roofing & Building - design tokens.
+ * Palette is derived from the work photography (slate, Yorkshire stone, lead,
+ * timber) reconciled with the supplied logo (emerald accent). The brand block
+ * is the only part that changes if the client revises the logo.
+ */
+:root {
+  /* Brand */
+  --accent: #1c6f42;          /* deep emerald, from the logo triangle */
+  --accent-bright: #2f9a5d;   /* accent on dark surfaces */
+  --accent-deep: #144e30;     /* AA-safe ground for white button text */
+  --accent-deepest: #0d3520;
+
+  /* Surfaces and ink */
+  --surface-paper: #f6f4ef;   /* warm off-white, stone cast */
+  --surface-stone: #e9e3d7;   /* buff panels */
+  --surface-slate: #22262a;   /* charcoal: header, footer, dark bands */
+  --surface-slate-deep: #171a1d;
+  --ink: #1c2023;
+  --ink-soft: #4d5359;        /* lead grey */
+  --ink-on-dark: #f1eee7;
+  --ink-on-dark-soft: #b8b1a4;
+  --line: #d8d2c6;
+  --line-strong: #b9b1a1;
+  --line-on-dark: #3a3f45;
+  --timber: #a8875a;          /* small doses: kickers, rules, the coursing device */
+
+  /* Type */
+  --font-display: 'Archivo Expanded', 'Arial Narrow', sans-serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+
+  --text-xs: 0.78rem;
+  --text-s: 0.9rem;
+  --text-m: 1.0625rem;
+  --text-l: clamp(1.2rem, 1.08rem + 0.6vw, 1.45rem);
+  --text-xl: clamp(1.5rem, 1.26rem + 1.2vw, 2.05rem);
+  --text-2xl: clamp(1.95rem, 1.5rem + 2.4vw, 3.1rem);
+  --text-hero: clamp(2.3rem, 1.6rem + 3.8vw, 4.2rem);
+
+  /* Space */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-section: clamp(4rem, 2.6rem + 6vw, 7.5rem);
+
+  /* Layout */
+  --wrap-max: 1440px;
+  --wrap-content: 1180px;
+  --wrap-prose: 68ch;
+  --gutter: clamp(1.1rem, 4vw, 2.5rem);
+
+  --radius: 2px;
+  --header-h: 4.25rem;
+}
+
+/* Dark bands re-scope the neutral tokens; components never branch on colour. */
+.on-dark {
+  --ink: var(--ink-on-dark);
+  --ink-soft: var(--ink-on-dark-soft);
+  --line: var(--line-on-dark);
+  --line-strong: #4d545c;
+  --accent: var(--accent-bright);
+}

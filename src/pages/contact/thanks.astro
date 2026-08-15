@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import { business } from '../../lib/business';
+---
+
+<Base
+  title="Enquiry Received | WW Roofing & Building"
+  description="Your enquiry has been received by WW Roofing & Building. We aim to reply the same working day."
+  noindex
+  hideContactBar
+>
+  <section class="wrap section thanks">
+    <p class="kicker">Enquiry received</p>
+    <h1>Thanks, it is with us</h1>
+    <p class="thanks-lede">
+      Your enquiry has landed and we aim to come back to you the same working day. If
+      the roof is actively leaking and it cannot wait, ring
+      <a href={business.phoneHref}>{business.phone}</a>.
+    </p>
+    <p class="thanks-next">
+      <a class="btn btn-outline" href="/projects/">Browse our work while you wait</a>
+    </p>
+  </section>
+</Base>
+
+<style>
+  .thanks {
+    min-height: 46vh;
+  }
+
+  .thanks-lede {
+    margin-block-start: var(--space-3);
+    font-size: var(--text-l);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 50ch;
+  }
+
+  .thanks-next {
+    margin-block-start: var(--space-5);
+  }
+</style>

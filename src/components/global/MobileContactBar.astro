@@ -1,0 +1,85 @@
+---
+import { business } from '../../lib/business';
+---
+
+<div class="mobile-contact" role="region" aria-label="Quick contact" data-contact-bar hidden>
+  <a class="mc-call" href={business.phoneHref}>Call {business.phone}</a>
+  <a class="mc-enquire" href="/contact/">Request a quote</a>
+</div>
+
+<script>
+  // Show the bar only once the hero's own CTAs have scrolled out of view, so
+  // the same actions are never duplicated on screen. Falls back to visible
+  // when IntersectionObserver is unavailable.
+  const bar = document.querySelector('[data-contact-bar]');
+  if (bar instanceof HTMLElement) {
+    const heroCta = document.querySelector('.hero-actions, .contact-form');
+    if (heroCta && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        ([entry]) => {
+          bar.hidden = entry.isIntersecting;
+        },
+        { rootMargin: '0px 0px -40px 0px' },
+      );
+      io.observe(heroCta);
+    } else {
+      bar.hidden = false;
+    }
+  }
+</script>
+
+<style>
+  .mobile-contact {
+    display: none;
+  }
+
+  @media (max-width: 899px) {
+    .mobile-contact {
+      position: fixed;
+      inset-inline: 0;
+      bottom: 0;
+      z-index: 30;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--surface-slate-deep);
+      border-top: 1px solid var(--line-on-dark);
+      padding-bottom: env(safe-area-inset-bottom, 0);
+    }
+
+    .mobile-contact[hidden] {
+      display: none;
+    }
+
+    .mobile-contact a {
+      font-family: var(--font-display);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      padding: 0.95rem 0.5rem;
+      color: var(--ink-on-dark);
+    }
+
+    .mc-call {
+      background: var(--accent-deep);
+    }
+
+    .mc-call:active,
+    .mc-call:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .mc-enquire:active,
+    .mc-enquire:hover {
+      color: var(--accent-bright);
+    }
+
+    /* Leave breathing room above the bar at the end of the page. */
+    :global(body) {
+      padding-bottom: 3.4rem;
+    }
+  }
+</style>

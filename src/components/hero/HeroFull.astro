@@ -1,0 +1,138 @@
+---
+import { business } from '../../lib/business';
+import CourseLines from '../craft/CourseLines.astro';
+import Photo from '../media/Photo.astro';
+
+interface Props {
+  photoSlug: string;
+  photoVariant?: string;
+  kicker: string;
+  heading: string;
+  lede: string;
+  /** Vertical focus of the image window, e.g. "center 68%". */
+  objectPosition?: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+}
+
+const {
+  photoSlug,
+  photoVariant,
+  kicker,
+  heading,
+  lede,
+  objectPosition = 'center 60%',
+  primaryHref = '/contact/',
+  primaryLabel = 'Request a quote',
+  secondaryHref = '/projects/',
+  secondaryLabel = 'View our work',
+} = Astro.props;
+---
+
+<section class="hero-full">
+  <div class="hero-media" style={`--hero-object-position: ${objectPosition}`}>
+    <Photo
+      slug={photoSlug}
+      variant={photoVariant}
+      role="hero"
+      sizes="100vw"
+      loading="eager"
+      class="hero-img"
+    />
+  </div>
+  <div class="wrap-wide hero-panel-row">
+    <div class="hero-panel on-dark">
+      <p class="kicker hero-kicker">{kicker}</p>
+      <h1>{heading}</h1>
+      <p class="hero-lede">{lede}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={primaryHref}>{primaryLabel}</a>
+        <a class="btn btn-outline" href={secondaryHref}>{secondaryLabel}</a>
+        <a class="phone-link" href={business.phoneHref}>{business.phone}</a>
+      </div>
+      <div class="hero-course" aria-hidden="true">
+        <CourseLines width={170} />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-full {
+    position: relative;
+  }
+
+  .hero-media {
+    max-height: min(78vh, 720px);
+    overflow: hidden;
+  }
+
+  .hero-media :global(picture) {
+    display: block;
+    height: 100%;
+  }
+
+  .hero-media :global(img) {
+    width: 100%;
+    height: 100%;
+    max-height: min(78vh, 720px);
+    object-fit: cover;
+    object-position: var(--hero-object-position);
+  }
+
+  .hero-panel-row {
+    position: relative;
+  }
+
+  .hero-panel {
+    position: relative;
+    z-index: 2;
+    margin-top: clamp(-9rem, -14vw, -4.5rem);
+    max-width: 620px;
+    background: var(--surface-slate);
+    color: var(--ink-on-dark);
+    padding: clamp(1.6rem, 3.5vw, 2.8rem);
+  }
+
+  .hero-kicker {
+    color: var(--ink-on-dark-soft);
+  }
+
+  .hero-panel h1 {
+    font-size: var(--text-hero);
+  }
+
+  .hero-lede {
+    margin-block-start: var(--space-3);
+    color: var(--ink-on-dark-soft);
+    font-size: var(--text-l);
+    line-height: 1.5;
+    max-width: 44ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-3) var(--space-4);
+    margin-block-start: var(--space-4);
+  }
+
+  .hero-course {
+    margin-block-start: var(--space-4);
+    color: var(--line-on-dark);
+  }
+
+  @media (max-width: 640px) {
+    .hero-media {
+      max-height: 46vh;
+    }
+
+    .hero-panel {
+      margin-top: -3rem;
+      margin-inline: calc(-1 * var(--gutter) + 0.6rem);
+    }
+  }
+</style>

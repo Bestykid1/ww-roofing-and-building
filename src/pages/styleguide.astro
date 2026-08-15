@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/global/Breadcrumbs.astro';
+import CourseLines from '../components/craft/CourseLines.astro';
+import CtaBand from '../components/sections/CtaBand.astro';
+import Photo from '../components/media/Photo.astro';
+
+const swatches = [
+  { name: 'paper', var: '--surface-paper' },
+  { name: 'stone', var: '--surface-stone' },
+  { name: 'slate', var: '--surface-slate' },
+  { name: 'ink', var: '--ink' },
+  { name: 'lead', var: '--ink-soft' },
+  { name: 'emerald', var: '--accent' },
+  { name: 'timber', var: '--timber' },
+];
+---
+
+<Base
+  title="Styleguide - WW Roofing & Building"
+  description="Internal design-system reference for the WW Roofing and Building website; not part of the public site."
+  noindex
+  hideContactBar
+>
+  <div class="wrap section">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Styleguide' }]} />
+
+    <p class="kicker" style="margin-top: 2rem">Design system</p>
+    <h1>Slate, stone and a surveyor's green.</h1>
+    <p class="prose" style="margin-top: 1rem; max-width: 60ch">
+      Everything on this page is built from the tokens. The palette comes from the
+      photography: charcoal slate, Yorkshire stone, lead grey and timber, with a single
+      emerald accent taken from the logo.
+    </p>
+
+    <h2 style="margin-top: 3rem">Palette</h2>
+    <div class="swatches">
+      {swatches.map((s) => (
+        <div class="swatch">
+          <div class="swatch-chip" style={`background: var(${s.var})`}></div>
+          <p>{s.name}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2 style="margin-top: 3rem">Type</h2>
+    <p class="kicker">Kicker label / Archivo Expanded</p>
+    <p style="font-family: var(--font-display); font-weight: 800; font-size: var(--text-hero); line-height: 1.05;">
+      Roofing &amp; Building
+    </p>
+    <p style="font-size: var(--text-l); max-width: 50ch;">
+      Body copy is Source Serif 4. Confident, editorial, and comfortable at length; the
+      voice of a serious British contractor rather than a template.
+    </p>
+
+    <h2 style="margin-top: 3rem">Actions</h2>
+    <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; margin-top: 1rem;">
+      <a class="btn btn-primary" href="#">Request a quote</a>
+      <a class="btn btn-outline" href="#">View our work</a>
+      <a class="phone-link" href="#">[PHONE]</a>
+      <a href="#">Inline text link</a>
+    </div>
+
+    <h2 style="margin-top: 3rem">Coursing motif (candidate)</h2>
+    <div style="color: var(--timber); margin-top: 1rem;">
+      <CourseLines />
+    </div>
+
+    <h2 style="margin-top: 3rem">Photography</h2>
+    <div class="sg-photos">
+      <Photo
+        slug="reroof-membrane-battens-chimney-lead"
+        sizes="(max-width: 700px) 100vw, 640px"
+        class="sg-photo"
+      />
+      <Photo
+        slug="new-slate-roof-conservation-rooflights"
+        sizes="(max-width: 700px) 50vw, 320px"
+        class="sg-photo"
+      />
+    </div>
+  </div>
+
+  <CtaBand />
+</Base>
+
+<style>
+  .swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+  }
+
+  .swatch-chip {
+    width: 96px;
+    height: 64px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+
+  .swatch p {
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.4rem;
+    color: var(--ink-soft);
+  }
+
+  .sg-photos {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+    align-items: start;
+  }
+
+  @media (max-width: 700px) {
+    .sg-photos {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

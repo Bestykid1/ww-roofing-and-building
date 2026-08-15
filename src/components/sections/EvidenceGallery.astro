@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+import Photo from '../media/Photo.astro';
+
+interface Props {
+  categories: string[];
+  heading?: string;
+  /** photos already shown on the page (e.g. the hero), excluded here */
+  excludeSlugs?: string[];
+  limit?: number;
+}
+
+const { categories, heading = 'From the scaffold', excludeSlugs = [], limit = 5 } = Astro.props;
+
+// Consent gate: photos with identifiable people never render in galleries
+// until the client confirms consent (pre-launch checklist).
+const all = await getCollection('photos');
+const photos = all
+  .filter(
+    (p) =>
+      (!p.data.peopleVisible || p.data.consentObtained) &&
+      !excludeSlugs.includes(p.data.slug) &&
+      p.data.categories.some((c) => categories.includes(c)),
+  )
+  .slice(0, limit);
+
+const [leadPhoto, ...rest] = photos;
+---
+
+{photos.length >= 3 && (
+  <section class="evidence section-tight">
+    <div class="wrap-wide">
+      <p class="kicker">{heading}</p>
+      <div class="ev-grid">
+        <figure class:list={['ev-lead', leadPhoto.data.orientation]}>
+          <Photo
+            slug={leadPhoto.data.slug}
+            role={leadPhoto.data.orientation === 'landscape' ? 'hero' : 'grid'}
+            sizes="(max-width: 900px) 100vw, 58vw"
+          />
+          <figcaption>{leadPhoto.data.alt}</figcaption>
+        </figure>
+        <div class="ev-rest">
+          {rest.map((p) => (
+            <figure>
+              <Photo slug={p.data.slug} role="grid" sizes="(max-width: 900px) 50vw, 20vw" />
+              <figcaption>{p.data.alt}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .ev-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--space-4);
+    align-items: start;
+  }
+
+  .ev-lead :global(img) {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .ev-lead.portrait :global(img) {
+    aspect-ratio: 3 / 4;
+    max-height: 640px;
+  }
+
+  .ev-rest {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+
+  .ev-rest :global(img) {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  figure figcaption {
+    font-size: var(--text-xs);
+    color: var(--ink-soft);
+    padding-block-start: 0.5rem;
+    max-width: 42ch;
+  }
+
+  @media (max-width: 900px) {
+    .ev-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

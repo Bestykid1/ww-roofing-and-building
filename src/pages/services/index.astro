@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
+import HeroText from '../../components/hero/HeroText.astro';
+import ServiceIndex from '../../components/sections/ServiceIndex.astro';
+import SplitFeature from '../../components/sections/SplitFeature.astro';
+import CtaBand from '../../components/sections/CtaBand.astro';
+
+const services = (await getCollection('services')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const rows = services.map((s) => ({
+  title: s.data.title,
+  href: `/services/${s.id}/`,
+  scope: s.data.intro.split('. ')[0].replace(/\.$/, '') + '.',
+  photoSlug: s.data.heroPhoto?.id,
+}));
+---
+
+<Base
+  title="Roofing Services in Leeds | WW Roofing & Building"
+  description="Roofing services across Leeds: re-roofing, slating, tiling, roof repairs, Velux and roof windows, leadwork and roofline. Honest advice and proper workmanship."
+>
+  <HeroText
+    kicker="WW Roofing & Building"
+    heading="Roofing services"
+    lede="Six core services cover almost everything a roof needs, from a slipped tile to a complete strip and re-cover. If you are not sure which applies, call and describe the problem; we will point you the right way."
+  />
+
+  <div class="wrap" style="padding-block-start: var(--space-4)">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
+  </div>
+
+  <ServiceIndex rows={rows} kicker="The work" heading="Choose a service" />
+
+  <SplitFeature
+    kicker="Beyond the roofline"
+    heading="Extensions and new builds"
+    photoSlug="extension-tiled-roof-lead-apron"
+    photoVariant="detail"
+    mediaSide="right"
+    ratio="even"
+    ctaHref="/construction/"
+    ctaLabel="Construction work"
+    photoCaption="New tiles and lead apron on a house extension"
+  >
+    <p>
+      Roofing is the heart of the business, but not the edge of it. WW takes on house
+      extensions, new-build roofing and oak-framed garden buildings where one team
+      carrying the job from structure to finished roof makes the work better.
+    </p>
+  </SplitFeature>
+
+  <CtaBand
+    title="Not sure what the roof needs?"
+    note="Describe the problem, send photos if you have them, and we will give you an honest steer before anyone climbs a ladder."
+  />
+</Base>

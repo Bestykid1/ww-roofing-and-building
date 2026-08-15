@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.netlify/
+*.log
+.lighthouse/
+.screenshots/
+preview-screenshot*.png
