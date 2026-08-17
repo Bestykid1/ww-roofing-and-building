@@ -7,8 +7,7 @@
  */
 export const business = {
   name: 'WW Roofing & Building',
-  // Legal entity line for the footer/terms; confirm sole trader/Ltd status.
-  legalName: '[LEGAL ENTITY NAME]',
+  legalName: 'WW Roofing & Building',
   phone: '07565 301143',
   phoneHref: 'tel:+447565301143',
   email: 'info@wwroofingandbuilding.co.uk',
