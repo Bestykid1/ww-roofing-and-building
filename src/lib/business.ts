@@ -15,6 +15,7 @@ export const business = {
   baseLocality: 'Crossgates, Leeds',
   region: 'West Yorkshire',
   serviceAreaSummary: 'Leeds and surrounding areas',
+  flatRoofingAreaSummary: 'Yorkshire and beyond',
   facebook: 'https://www.facebook.com/wwroofingandbuilding/',
 } as const;
 

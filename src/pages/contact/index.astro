@@ -6,8 +6,8 @@ import { business } from '../../lib/business';
 ---
 
 <Base
-  title="Request a Flat Roofing Quote | WW Roofing Leeds"
-  description="Contact WW Roofing & Building in Leeds for RubberBond flat roofing, repairs, extensions and commercial roofing. Call or send an enquiry."
+  title="Request a Flat Roofing Quote | WW Roofing Yorkshire"
+  description="Contact Leeds-based WW Roofing for RubberBond flat roofing across Yorkshire and beyond. Other roofing and building work across Leeds and surrounding areas."
   hideContactBar
 >
   <section class="contact-page">
@@ -38,7 +38,7 @@ import { business } from '../../lib/business';
         <div class="contact-covering">
           <h2>Covering</h2>
           <p>
-            {business.serviceAreaSummary}, from our base in {business.baseLocality}.
+            From our base in {business.baseLocality}, we cover {business.flatRoofingAreaSummary} for RubberBond flat roofing. Other roofing and building work generally covers {business.serviceAreaSummary}.
             <a href="/areas/">Full coverage details</a>.
           </p>
         </div>
@@ -69,6 +69,9 @@ import { business } from '../../lib/business';
     line-height: 1.5;
     color: var(--ink-soft);
   }
+
+  .contact-grid > * { min-width: 0; }
+  .cd-email a { overflow-wrap: anywhere; }
 
   .contact-direct {
     margin-block-start: var(--space-5);

@@ -23,7 +23,8 @@ const jsonLd = {
     addressRegion: 'West Yorkshire',
     addressCountry: 'GB',
   },
-  areaServed: areasServed.map((a) => ({ '@type': 'Place', name: a })),
+  areaServed: ['Yorkshire', ...areasServed].map((a) => ({ '@type': 'Place', name: a })),
+  description: 'Leeds-based RubberBond flat roofing across Yorkshire and beyond. Other roofing and building work generally covers Leeds and surrounding areas.',
   sameAs: [business.facebook],
 };
 ---

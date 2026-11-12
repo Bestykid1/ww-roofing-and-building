@@ -29,6 +29,9 @@ The form validates required fields and prepares an email to the verified busines
 
 - Production build: 35 pages generated.
 - Static internal links and image URLs: no missing targets.
+- Coverage updated from the owner's clarification: RubberBond flat roofing across Yorkshire and beyond; other roofing and building work generally across Leeds and surrounding areas. Applied to visible copy, contact journey, metadata and structured data.
+- Browser review: desktop homepage and project page; phone homepage, navigation, project and contact layouts; tablet flat-roofing page. Mobile menu open/close and Escape, FAQ expansion, required fields, malformed email validation and email preparation status checked. No enquiry was sent.
+- Narrow-screen menu wrapping and contact-column/email overflow corrected. Screenshots supplied with the handover.
 - Review hosting is separate from the live business domain.
 - Existing dependency audit reports vulnerabilities in Astro 5 and its dependency tree. A major framework upgrade was not mixed into this visual rebuild. Resolve the toolchain audit before production launch, then rebuild and repeat checks.
 - Confirm project-specific warranty terms at quotation stage. Do not market the BBA service-life assessment as a warranty.
