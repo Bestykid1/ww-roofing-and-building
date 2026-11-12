@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import FlatProject from '../../components/sections/FlatProject.astro';
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
 import HeroText from '../../components/hero/HeroText.astro';
@@ -16,13 +17,14 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
   <HeroText
     kicker="Our work"
     heading="The work is the evidence"
-    lede="Every photograph here is one of our jobs, taken by the people who did the work. In-progress shots included deliberately: what a roof looks like half way through tells you more about a contractor than any finished glamour shot."
+    lede="Explore our RubberBond flat roofing at Mount St Mary, alongside pitched roofing and building work. Real projects, from installation details to completed roofs."
   />
 
   <div class="wrap" style="padding-block-start: var(--space-4)">
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Our work' }]} />
   </div>
 
+  <FlatProject/>
   <section class="section-tight">
     <div class="wrap-wide project-archive">
       {projects.map((project) => {

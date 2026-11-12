@@ -1,0 +1,3 @@
+import fs from 'node:fs';import path from 'node:path';
+const root=path.resolve(process.argv[2] || 'dist');let count=0,broken=[];
+function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())walk(p);else if(p.endsWith('.html')){count++;const html=fs.readFileSync(p,'utf8');for(const m of html.matchAll(/(?:href|src)="(\/[^"#?]*)/g)){const target=path.join(root,decodeURIComponent(m[1]));if(!fs.existsSync(target))broken.push([path.relative(root,p),m[1]]);}if(!html.includes('<title>'))broken.push([p,'Missing title']);}}}walk(root);console.log(JSON.stringify({pages:count,broken},null,2));if(broken.length)process.exitCode=1;

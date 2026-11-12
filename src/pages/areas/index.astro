@@ -14,13 +14,13 @@ const otherAreas = areasServed.filter(
 ---
 
 <Base
-  title="Areas We Cover | Roofers Across Leeds | WW Roofing"
-  description="WW Roofing & Building works across Leeds and the surrounding areas from a base in Crossgates: east and north Leeds, Garforth, Wetherby, Roundhay and beyond."
+  title="Flat Roofing Across Yorkshire & Beyond | WW Roofing"
+  description="RubberBond flat roofing across Yorkshire and beyond. Other roofing and building work generally covers Leeds and surrounding areas. Based in Crossgates."
 >
   <HeroText
     kicker="Coverage"
     heading="Areas we cover"
-    lede={`WW Roofing & Building is based in ${business.baseLocality}. Most of our work is within the city and the ring of towns and villages around it, and we quote anywhere we can reach, scaffold and service properly.`}
+    lede={`WW Roofing & Building is based in ${business.baseLocality}. We welcome RubberBond flat roofing projects across Yorkshire and beyond. Other roofing and building work generally covers Leeds and surrounding areas.`}
   />
 
   <div class="wrap" style="padding-block-start: var(--space-4)">
@@ -30,20 +30,7 @@ const otherAreas = areasServed.filter(
   <section class="section-tight">
     <div class="wrap areas-layout">
       <div class="prose">
-        <h2>How coverage works</h2>
-        <p>
-          Roofing is local work. Scaffold, skips, deliveries and repeat visits all get
-          harder with distance, so we concentrate on jobs we can run properly from east
-          Leeds. In practice that means the whole of Leeds and a broad ring around it,
-          with Selby and Wetherby about the edge of normal range.
-        </p>
-        <p>
-          A few areas get their own page below because we can say something genuinely
-          useful about the housing there. The absence of a page does not mean the
-          absence of coverage: if you can see your area in the list, or you are close to
-          one that is, we cover you.
-        </p>
-        <h2>Quoting is the same everywhere</h2>
+        <h2>RubberBond flat roofing: Yorkshire and beyond</h2><p>We install <a href="/flat-roofing/">RubberBond FleeceBack EPDM flat roofing</a> for homes, extensions and commercial projects throughout Yorkshire, and are happy to discuss work further afield. Send your postcode, roof details and programme so we can plan the assessment and installation.</p><h2>Other roofing and building work: Leeds and surrounding areas</h2><p>Our pitched roofing, repairs, slating, tiling, roof windows, leadwork and building work generally serve Leeds and the surrounding towns and villages. The local areas listed here relate to that work; they do not limit our RubberBond flat roofing coverage.</p><h2>Quoting is the same everywhere</h2>
         <p>
           We visit, measure, and look at the roof itself rather than pricing from the
           kerb. You get a written price that says what is included, and if anything can
@@ -52,13 +39,13 @@ const otherAreas = areasServed.filter(
       </div>
 
       <aside>
-        <h2 class="areas-side-head">Dedicated area pages</h2>
+        <h2 class="areas-side-head">Local area pages</h2>
         <ul class="areas-links">
           {areaPages.map((a) => (
             <li><a href={`/areas/${a.id}/`}>{a.data.title}</a></li>
           ))}
         </ul>
-        <h2 class="areas-side-head">Also covered</h2>
+        <h2 class="areas-side-head">Other local areas</h2>
         <ul class="areas-plain">
           {otherAreas.map((a) => (
             <li>{a}</li>
@@ -69,8 +56,8 @@ const otherAreas = areasServed.filter(
   </section>
 
   <CtaBand
-    title="Near us but not listed?"
-    note="Ask. If we can reach it and service it properly, the answer is usually yes."
+    title="Planning a roof outside Leeds?"
+    note="We welcome RubberBond flat roofing enquiries across Yorkshire and beyond. Tell us where your project is."
   />
 </Base>
 

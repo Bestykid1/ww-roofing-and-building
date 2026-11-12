@@ -15,6 +15,7 @@ const jsonLd = {
   url: Astro.site?.toString(),
   image: new URL('/og-default.jpg', Astro.site).toString(),
   telephone: business.phone,
+  knowsAbout: ['RubberBond FleeceBack EPDM', 'Flat roofing', 'Roof refurbishment'],
   email: business.email,
   address: {
     '@type': 'PostalAddress',
@@ -22,7 +23,8 @@ const jsonLd = {
     addressRegion: 'West Yorkshire',
     addressCountry: 'GB',
   },
-  areaServed: areasServed.map((a) => ({ '@type': 'Place', name: `${a}, Leeds` })),
+  areaServed: ['Yorkshire', ...areasServed].map((a) => ({ '@type': 'Place', name: a })),
+  description: 'Leeds-based RubberBond flat roofing across Yorkshire and beyond. Other roofing and building work generally covers Leeds and surrounding areas.',
   sameAs: [business.facebook],
 };
 ---

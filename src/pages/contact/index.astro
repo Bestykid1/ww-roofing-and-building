@@ -6,8 +6,8 @@ import { business } from '../../lib/business';
 ---
 
 <Base
-  title="Contact WW Roofing & Building | Leeds Roofers"
-  description="Contact WW Roofing & Building in Leeds for roof repairs, re-roofs, slating, tiling, extensions and subcontract roofing. Call or send an enquiry."
+  title="Request a Flat Roofing Quote | WW Roofing Yorkshire"
+  description="Contact Leeds-based WW Roofing for RubberBond flat roofing across Yorkshire and beyond. Other roofing and building work across Leeds and surrounding areas."
   hideContactBar
 >
   <section class="contact-page">
@@ -15,7 +15,7 @@ import { business } from '../../lib/business';
       <div class="contact-intro">
         <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
         <p class="kicker" style="margin-top: var(--space-4)">Contact</p>
-        <h1>Tell us about the job</h1>
+        <h1>Tell us about your roof</h1>
         <p class="contact-lede">
           A few details is all it takes. Describe the problem or the project, and we
           will come back with an honest first steer and arrange to look at it properly.
@@ -38,7 +38,7 @@ import { business } from '../../lib/business';
         <div class="contact-covering">
           <h2>Covering</h2>
           <p>
-            {business.serviceAreaSummary}, from our base in {business.baseLocality}.
+            From our base in {business.baseLocality}, we cover {business.flatRoofingAreaSummary} for RubberBond flat roofing. Other roofing and building work generally covers {business.serviceAreaSummary}.
             <a href="/areas/">Full coverage details</a>.
           </p>
         </div>
@@ -69,6 +69,9 @@ import { business } from '../../lib/business';
     line-height: 1.5;
     color: var(--ink-soft);
   }
+
+  .contact-grid > * { min-width: 0; }
+  .cd-email a { overflow-wrap: anywhere; }
 
   .contact-direct {
     margin-block-start: var(--space-5);

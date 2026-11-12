@@ -1,33 +1,28 @@
-/*
- * WW Roofing & Building - design tokens.
- * Palette is derived from the work photography (slate, Yorkshire stone, lead,
- * timber) reconciled with the supplied logo (emerald accent). The brand block
- * is the only part that changes if the client revises the logo.
- */
+/* WW Roofing: charcoal, white and orange brand tokens. */
 :root {
   /* Brand */
-  --accent: #1c6f42;          /* deep emerald, from the logo triangle */
-  --accent-bright: #2f9a5d;   /* accent on dark surfaces */
-  --accent-deep: #144e30;     /* AA-safe ground for white button text */
-  --accent-deepest: #0d3520;
+  --accent: #ad4200;          /* deep emerald, from the logo triangle */
+  --accent-bright: #ff7900;   /* accent on dark surfaces */
+  --accent-deep: #a83e00;     /* AA-safe ground for white button text */
+  --accent-deepest: #823000;
 
   /* Surfaces and ink */
-  --surface-paper: #f6f4ef;   /* warm off-white, stone cast */
-  --surface-stone: #e9e3d7;   /* buff panels */
-  --surface-slate: #22262a;   /* charcoal: header, footer, dark bands */
-  --surface-slate-deep: #171a1d;
+  --surface-paper: #ffffff;   /* warm off-white, stone cast */
+  --surface-stone: #f2f2ef;   /* buff panels */
+  --surface-slate: #252525;   /* charcoal: header, footer, dark bands */
+  --surface-slate-deep: #191919;
   --ink: #1c2023;
   --ink-soft: #4d5359;        /* lead grey */
   --ink-on-dark: #f1eee7;
-  --ink-on-dark-soft: #b8b1a4;
-  --line: #d8d2c6;
-  --line-strong: #b9b1a1;
+  --ink-on-dark-soft: #c8c8c8;
+  --line: #dededb;
+  --line-strong: #bdbdb8;
   --line-on-dark: #3a3f45;
-  --timber: #a8875a;          /* small doses: kickers, rules, the coursing device */
+  --timber: #ad4200;          /* small doses: kickers, rules, the coursing device */
 
   /* Type */
   --font-display: 'Archivo Expanded', 'Arial Narrow', sans-serif;
-  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-body: Arial, Helvetica, sans-serif;
 
   --text-xs: 0.78rem;
   --text-s: 0.9rem;
