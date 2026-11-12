@@ -6,3 +6,6 @@ dist/
 .lighthouse/
 .screenshots/
 preview-screenshot*.png
+
+dist-final/
+dist-checked/

@@ -1,0 +1,6 @@
+---
+import Base from './Base.astro';
+import FlatCta from '../components/sections/FlatCta.astro';
+const {title,description,kicker,heading,intro}=Astro.props;
+---
+<Base title={title} description={description}><section class="page-head"><div class="wrap"><p class="eyebrow">{kicker}</p><h1>{heading}</h1><p>{intro}</p><a class="button" href="/contact/">Discuss your project ↗</a></div></section><slot/><FlatCta/></Base>

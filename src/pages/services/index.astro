@@ -25,14 +25,15 @@ const rows = services.map((s) => ({
 >
   <HeroText
     kicker="WW Roofing & Building"
-    heading="Roofing services"
-    lede="Six core services cover almost everything a roof needs, from a slipped tile to a complete strip and re-cover. If you are not sure which applies, call and describe the problem; we will point you the right way."
+    heading="Other roofing & building services"
+    lede="Alongside our RubberBond flat roofing specialism, we undertake pitched roofing, slating, tiling, repairs, roof windows and leadwork."
   />
 
   <div class="wrap" style="padding-block-start: var(--space-4)">
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Services' }]} />
   </div>
 
+  <div class="wrap" style="margin-block:30px"><a class="button" href="/flat-roofing/">Looking for RubberBond flat roofing? ↗</a></div>
   <ServiceIndex rows={rows} kicker="The work" heading="Choose a service" />
 
   <SplitFeature
