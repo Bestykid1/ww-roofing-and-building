@@ -1,0 +1,47 @@
+{
+  "tiled-roof-windows": {
+    "width": 1200,
+    "height": 900,
+    "alt": "Three roof windows set into a grey tiled roof"
+  },
+  "tiled-roof-verge": {
+    "width": 1200,
+    "height": 900,
+    "alt": "Grey roof tiles and white verge trim at the gable"
+  },
+  "tiled-roof-slope": {
+    "width": 1200,
+    "height": 900,
+    "alt": "View along the tiled roof towards the ridge"
+  },
+  "church-slate-progress": {
+    "width": 1200,
+    "height": 900,
+    "alt": "Slate roof at Mount St Mary’s Church with access equipment during work"
+  },
+  "church-slate-roof": {
+    "width": 1200,
+    "height": 900,
+    "alt": "Slate roof and scaffold at Mount St Mary’s Church"
+  },
+  "church-eaves-detail": {
+    "width": 1200,
+    "height": 900,
+    "alt": "Roof edge and gutter detail beside the slate roof at Mount St Mary’s Church"
+  },
+  "church-slate-junctions": {
+    "width": 1200,
+    "height": 900,
+    "alt": "Slate courses and projecting roof details at Mount St Mary’s Church"
+  },
+  "lead-welding": {
+    "width": 1200,
+    "height": 900,
+    "alt": "Hands welding a formed lead roofing detail at the workbench"
+  },
+  "formed-lead-detail": {
+    "width": 1200,
+    "height": 900,
+    "alt": "Formed lead roofing component on a workbench with hand tools"
+  }
+}
