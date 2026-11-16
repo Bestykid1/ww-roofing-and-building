@@ -1,4 +1,5 @@
 ---
+import WorkEvidence from '../../components/sections/WorkEvidence.astro';
 import { getCollection } from 'astro:content';
 import FlatProject from '../../components/sections/FlatProject.astro';
 import Base from '../../layouts/Base.astro';
@@ -25,6 +26,7 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
   </div>
 
   <FlatProject/>
+  <WorkEvidence/>
   <section class="section-tight">
     <div class="wrap-wide project-archive">
       {projects.map((project) => {

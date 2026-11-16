@@ -35,3 +35,7 @@ The form validates required fields and prepares an email to the verified busines
 - Review hosting is separate from the live business domain.
 - Existing dependency audit reports vulnerabilities in Astro 5 and its dependency tree. A major framework upgrade was not mixed into this visual rebuild. Resolve the toolchain audit before production launch, then rebuild and repeat checks.
 - Confirm project-specific warranty terms at quotation stage. Do not market the BBA service-life assessment as a warranty.
+
+## Owner-supplied photographs — 16 November 2026
+
+Selected nine photographs supplied in Downloads/Job 1, Downloads/Mount St Marys church and Lead Welding.jpeg. Original files remain untouched. Generated responsive 480px and up-to-1200px WebP assets with descriptive alt text and captions. Used on the homepage secondary-services section, project archive, new tiled-roof project, Mount St Mary slate section, About and relevant service pages. No new address, project date, warranty, before/after or RubberBond claim is inferred from the new photographs. The Mount St Mary pitched-roof images are explicitly separate from the documented flat-roof package.

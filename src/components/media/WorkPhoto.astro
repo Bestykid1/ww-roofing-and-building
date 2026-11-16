@@ -1,0 +1,7 @@
+---
+import photos from '../../lib/work-photos.json';
+interface Props { id: keyof typeof photos; caption?: string; }
+const {id,caption}=Astro.props; const photo=photos[id];
+---
+<figure class="work-photo"><a href={"/images/work/"+id+".webp"} aria-label={"View full photograph: "+photo.alt}><img src={"/images/work/"+id+".webp"} srcset={"/images/work/"+id+"-480.webp 480w, /images/work/"+id+".webp "+photo.width+"w"} sizes="(max-width: 700px) 92vw, (max-width: 1100px) 46vw, 560px" width={photo.width} height={photo.height} alt={photo.alt} loading="lazy" decoding="async" /></a>{caption && <figcaption>{caption}</figcaption>}</figure>
+<style>.work-photo{margin:0;min-width:0}.work-photo img{width:100%;height:auto;display:block}.work-photo a{display:block}.work-photo figcaption{font-size:14px;line-height:1.55;color:#555;margin-top:12px}</style>

@@ -1,4 +1,5 @@
 ---
+import WorkEvidence from '../../components/sections/WorkEvidence.astro';
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/global/Breadcrumbs.astro';
@@ -35,6 +36,7 @@ const rows = services.map((s) => ({
 
   <div class="wrap" style="margin-block:30px"><a class="button" href="/flat-roofing/">Looking for RubberBond flat roofing? ↗</a></div>
   <ServiceIndex rows={rows} kicker="The work" heading="Choose a service" />
+  <WorkEvidence/>
 
   <SplitFeature
     kicker="Beyond the roofline"
